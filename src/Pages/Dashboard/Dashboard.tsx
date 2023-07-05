@@ -7,6 +7,8 @@ import * as S from "./Dashboard.Style";
 import CardClienteAlta from "../../Components/DashbordCards/CardClienteAlta/CardClienteAlta";
 import CardClienteBaixa from "../../Components/DashbordCards/CardClienteBaixa/CardClienteBaixa";
 import TabelaProducts from "../../Components/TableDasboard/TableProducts";
+import { NavTable } from "../../Components/NavTable/NavTable";
+import ImgProducts from "../../assets/Icons/IconProducts.svg";
 
 const Dashboard = () => {
   const clientes = [
@@ -14,7 +16,6 @@ const Dashboard = () => {
     { id: 2, cliente: "Pizzria", percentual: 20 },
     { id: 3, cliente: "Padaria", percentual: 15 },
     { id: 4, cliente: "Loja de Roupa", percentual: 5 },
-    
   ];
 
   const produtos = [
@@ -23,7 +24,12 @@ const Dashboard = () => {
     { id: 3, produto: "Produto C", percentual: 15, cargo: "Analista" },
     { id: 4, produto: "Produto D", percentual: 5, cargo: "Analista" },
   ];
-
+  const btnAlta = () => {
+    return 
+  };
+  const btnBaixa = () => {
+    return 
+  };
   return (
     <>
       <Layout>
@@ -34,15 +40,30 @@ const Dashboard = () => {
             <CardClienteAlta />
             <CardClienteBaixa />
           </S.Container>
+
           <S.DivTable>
             <TabelaProducts
-              title="Produtos"
+              nav={
+                <NavTable
+                  img={ImgProducts}
+                  title="Produtos"
+                  onClickAlta={btnAlta}
+                  onClickBaixa={btnBaixa}
+                />
+              }
               id="ID"
               percentual="Percentual"
               dados={produtos}
             />
             <TabelaProducts
-              title="Clientes"
+              nav={
+                <NavTable
+                  img={ImgProducts}
+                  title="Produtos"
+                  onClickAlta={btnAlta}
+                  onClickBaixa={btnBaixa}
+                />
+              }
               id="ID"
               percentual="Percentual"
               dados={clientes}

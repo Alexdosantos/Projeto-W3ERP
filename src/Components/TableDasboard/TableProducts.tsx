@@ -1,9 +1,11 @@
+import { ReactNode } from "react";
 import * as S from "./TableProducts.style";
 
 type TableProps = {
-  title: string;
+  nav: ReactNode
   id: string;
   percentual: string;
+
   dados: Array<{
     id: number;
     cliente?: string;
@@ -12,10 +14,10 @@ type TableProps = {
   }>;
 };
 
-const TabelaProducts = ({ title, id, percentual, dados }: TableProps) => {
+const TabelaProducts = ({ nav, id, percentual, dados }: TableProps) => {
   return (
     <S.Container>
-      <h2>{title}</h2>
+      <h2>{nav}</h2>
       <S.TableDashboard>
         <S.DivThead>
           <tr>

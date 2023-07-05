@@ -7,7 +7,7 @@ export const Container = styled.div`
 `;
 
 export const DivTable = styled.div`
-  display: flex;
+  display: flex; 
   margin-top: 100px;
 
 `

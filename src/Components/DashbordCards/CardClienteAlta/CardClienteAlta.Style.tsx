@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -23,13 +22,17 @@ export const Container = styled.div`
     margin: -70px 0 0 40px;
   }
 `;
-
+export const Wapper = styled.div`
+  display: flex;
+`;
 export const TextP = styled.p`
-display: flex;
-gap: 5px;
+  display: flex;
+  gap: 5px;
+  margin: 29px 0 0 0;
+
 
   color: #c5cfff;
-  font-size: 16px;
+  font-size: 14px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 200;
@@ -51,7 +54,7 @@ export const Number = styled.h4`
 export const Porcentagem = styled.div`
   width: 5vw;
   height: 3vh;
- 
+
   align-items: flex-start;
   gap: 10px;
   border-radius: 90px;

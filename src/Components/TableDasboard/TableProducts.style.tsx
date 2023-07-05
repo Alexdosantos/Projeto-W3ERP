@@ -2,10 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 771px;
-  height: 700px;
-  flex-shrink: 0;
+  height: 700px;  
   border-radius: 24px;
-  /* background: var(--branco, #ff0000); */
+ 
 
   box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
 
@@ -28,8 +27,6 @@ export const TableDashboard = styled.table`
   width: 651px;
   border-collapse: collapse;
   
-
-  
 `;
 
 export const DivThead = styled.thead`
@@ -42,14 +39,14 @@ export const DivThead = styled.thead`
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
-  letter-spacing: 0.2px;
-  
+  letter-spacing: 0.2px;  
 
   color: #fff;
 `;
 export const Td = styled.td`
  padding: 10px;
-  text-align: center;
+ text-align: center;
+
   color: #212121;
 
   font-size: 16px;
@@ -59,10 +56,13 @@ export const Td = styled.td`
   line-height: 150%;
   letter-spacing: 0.2px;
   
+  
 `;
 export const ThLeft = styled.th`
   border-top-left-radius: 10px;
+ 
 `;
 export const ThRight = styled.th`
   border-top-right-radius: 10px;
+  
 `;

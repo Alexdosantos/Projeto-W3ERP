@@ -1,11 +1,14 @@
+import Grafics from "../../Grafics/Grafics";
 import * as S from "./CardClienteAlta.Style";
 
 const CardClienteAlta = () => {
   return (
     <>
       <S.Container>
-        <div>
-          <div></div>
+        <S.Wapper>
+          <div>
+            <Grafics/>
+          </div>
           <div>
             <S.TextP>
               Total
@@ -20,7 +23,7 @@ const CardClienteAlta = () => {
               </S.Porcentagem>
             </S.DivNumber>
           </div>
-        </div>
+        </S.Wapper>
       </S.Container>
     </>
   );
