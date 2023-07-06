@@ -12,7 +12,7 @@ const Grafics = () => {
   };
 
   return (
-    <PieChart width={100} height={100}>
+    <PieChart width={100} height={100} >
       <Pie
         data={data}
         cx="40%"

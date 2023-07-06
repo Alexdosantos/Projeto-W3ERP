@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const ContainerOne = styled.div`
   display: flex;
   gap: 25px;
+  margin: 12px 0 0 15px;
   
 `;
 export const ImgProducts = styled.img`

@@ -1,38 +1,42 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 210px;
+  width: 650%;
   height: 124px;
+  margin-left: 15px;
 
   border-radius: 24px;
   background: #02156a;
+  margin: -70px 40px 0 40px;
+  padding: 1px;
 
-  @media (min-width: 2000px) {
-    width: 10vw;
-    height: 13vh;
-    margin: -90px 0 0 80px;
-    border-radius: 36px;
-  }
-
-  @media (max-width: 3000px) {
-    width: 15vw;
+  
+  /* @media (max-width: 3000px) {
+    width: 16vw;
     height: 12vh;
 
     border-radius: 20px;
-    margin: -70px 0 0 40px;
-  }
+    margin: -70px 40px 0 40px;
+  } */
 `;
 export const Wapper = styled.div`
   display: flex;
 `;
+export const DivGraphics = styled.div`
+  margin-top:15px;
+`
+export const Container1 = styled.div`
+ display: flex;
+ flex-direction: column;
+ gap:5px;
+`
 export const TextP = styled.p`
-  display: flex;
-  gap: 5px;
-  margin: 29px 0 0 0;
+display: flex;
 
+margin: 20px 0  0 0;
 
   color: #c5cfff;
-  font-size: 14px;
+  font-size: 13px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 200;
@@ -41,6 +45,7 @@ export const TextP = styled.p`
 `;
 export const DivNumber = styled.div`
   display: flex;
+  gap: 15px;
 `;
 export const Number = styled.h4`
   color: #fff;
@@ -54,11 +59,11 @@ export const Number = styled.h4`
 export const Porcentagem = styled.div`
   width: 5vw;
   height: 3vh;
-
+ 
   align-items: flex-start;
   gap: 10px;
   border-radius: 90px;
-  background: #00c247;
+  background: #F33
 `;
 
 export const TextPorcentagem = styled.p`

@@ -1,14 +1,13 @@
-import CardProdutctsBaixa from "../../Components/DashbordCards/CardProductBaixa/CarProductBaixa";
 import { DashbordData } from "../../Components/DashboardData/DashbordData";
-import CardProdutctsAlta from "../../Components/DashbordCards/CardProductsAlta/CardProdutctsAlta";
 import { Layout } from "../../Components/Layout/Layout";
-
 import * as S from "./Dashboard.Style";
-import CardClienteAlta from "../../Components/DashbordCards/CardClienteAlta/CardClienteAlta";
-import CardClienteBaixa from "../../Components/DashbordCards/CardClienteBaixa/CardClienteBaixa";
 import TabelaProducts from "../../Components/TableDasboard/TableProducts";
 import { NavTable } from "../../Components/NavTable/NavTable";
-import ImgProducts from "../../assets/Icons/IconProducts.svg";
+
+import ImgProducts from "../../assets/Icons/IconBlue.png"
+import ImgClients from "../../assets/Icons/IconClients.png"
+import LowCard from "../../Components/DashbordCards/LowCard/LowCard";
+import HighCard from "../../Components/DashbordCards/HighCard/HighCard";
 
 const Dashboard = () => {
   const clientes = [
@@ -25,20 +24,20 @@ const Dashboard = () => {
     { id: 4, produto: "Produto D", percentual: 5, cargo: "Analista" },
   ];
   const btnAlta = () => {
-    return 
+    return;
   };
   const btnBaixa = () => {
-    return 
+    return;
   };
   return (
     <>
       <Layout>
         <DashbordData>
           <S.Container>
-            <CardProdutctsAlta />
-            <CardProdutctsBaixa />
-            <CardClienteAlta />
-            <CardClienteBaixa />
+            <HighCard title="Produtos" total="82" porcentagem="25" />
+            <LowCard title="Produtos" total="32" porcentagem="25" />
+            <HighCard title="Clientes" total="22" porcentagem="25" />
+            <LowCard title="Clientes" total="29" porcentagem="25" />
           </S.Container>
 
           <S.DivTable>
@@ -58,8 +57,8 @@ const Dashboard = () => {
             <TabelaProducts
               nav={
                 <NavTable
-                  img={ImgProducts}
-                  title="Produtos"
+                  img={ImgClients}
+                  title="Clientes"
                   onClickAlta={btnAlta}
                   onClickBaixa={btnBaixa}
                 />
