@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
   width: 22%;
   height: 32%;
   margin: 0 0 0 0;
@@ -24,7 +25,7 @@ export const ImgUser = styled.img`
 `;
 
 export const TitleUser = styled.h4`
-margin: 15% 0 0 0;
+  margin: 15% 0 0 0;
   color: #212121;
 
   font-family: Poppins;
@@ -35,12 +36,18 @@ margin: 15% 0 0 0;
   letter-spacing: 0.2px;
 `;
 export const TitleStatus = styled.p`
-  color:  #00C247;
-/* 14px Regular */
-font-family: Poppins;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%;
-letter-spacing: 0.2px;
+  color: #00c247;
+  /* 14px Regular */
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.2px;
 `;
+export const DivInformation = styled.div`
+  
+  margin: 5% 5% 0 5%;
+`;
+
+

@@ -17,10 +17,28 @@ export const Title = styled.h4`
   line-height: 150%;
 `;
 export const DivCardInformation = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+   
+  gap: 3%;
   width: 90%;
   height: 750%;
-  padding: 2% 0 0 2%;
+  padding: 2% 0 0 3%;
   margin: 2% 0 0 5%;
-  background: grey;
   border-radius: 5px 5px 5px 5px;
+
+   overflow: auto;
+    
+  /* Ocultar a barra de rolagem */
+    scrollbar-width: thin; /* Para navegadores Firefox */
+    scrollbar-color: transparent transparent; /* Para navegadores Chrome e Safari */
+    
+    /* Estilos para navegadores Chrome e Safari */
+    &::-webkit-scrollbar {
+        width: 6px; /* Largura da barra de rolagem */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent; /* Cor do polegar da barra de rolagem */
+    }
 `;
