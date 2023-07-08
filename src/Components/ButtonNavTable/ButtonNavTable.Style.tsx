@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 interface ButtonProps {
   active?: boolean;
-  buttonType: "alta" | "baixa";
+  buttontype: string;
 }
 
 export const BtnNavTable = styled.button<ButtonProps>`
@@ -22,7 +22,7 @@ export const BtnNavTable = styled.button<ButtonProps>`
 
   background-color: ${(props) => {
     if (props.active) {
-      return props.buttonType === "alta" ? "#00ff00" : "#ff0000";
+      return props.buttontype === "alta" ? "#00ff00" : "#ff0000";
     } else {
       return "#ffffff";
     }

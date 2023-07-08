@@ -1,17 +1,19 @@
 import {Checkbox,InputAdornment,Typography,FormControlLabel} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { FetchPost } from "../../Service/FetchPosts";
+import { useApi } from "../../Hooks/useApi";
 
 import ImgLogin from "../../assets/ImgLogin/ImgLogin.jpeg";
 import * as S from "./Login.Style";
 import "../../teste.css";
+
 
 const Login = () => {
   const [email, setEmail] = useState<string>();
   const [senha, setSenha] = useState<string>();
 
   const navigate = useNavigate();
+  const {login} = useApi()
 
   
 
@@ -21,7 +23,7 @@ const Login = () => {
     console.log("Senha:", senha);
 
     try {
-      const data = await FetchPost({ email, senha})
+      const data = await login(email, senha);
       console.log("Response:", data);
       navigate("/Dashbord")
     }catch (error) {

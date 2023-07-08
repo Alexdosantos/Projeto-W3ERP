@@ -4,7 +4,7 @@ type ButtonNavTableProps = {
   onClick: () => void;
   title: string;
   active?: boolean;
-  buttonType: "alta" | "baixa";
+  buttonType: string;
 };
 
 export const ButtonNavTable = ({
@@ -14,7 +14,7 @@ export const ButtonNavTable = ({
   buttonType
 }: ButtonNavTableProps) => {
   return (
-    <S.BtnNavTable active={active} buttonType={buttonType} onClick={onClick}>
+    <S.BtnNavTable active={active} buttontype={buttonType} onClick={onClick}>
       {title}
     </S.BtnNavTable>
   );
