@@ -1,7 +1,7 @@
 import * as S from "./PredicoesDatails.Style";
 import { Link } from "react-router-dom";
 import { Layout } from "../../../Components/Layout/Layout";
-import ImgLeft from "../../../assets/Icons/left-small.svg";
+import ImgLeft from "../../../assets/Icons/left-small.svg.png";
 import { BannerDatailsPredicoes } from "../../../Components/BannerInformation/BannerDatailsPredicoes";
 import TabelaProducts from "../../../Components/TableDasboard/TableProducts";
 
@@ -42,9 +42,9 @@ export const PredicoesDatails = () => {
       <Layout>
         <S.Wapper>
           <Link to={"/Predicoes"}>
-            <S.DivImgLeft>
+            <div>
               <S.ImgLeft src={ImgLeft} alt="" />
-            </S.DivImgLeft>
+            </div>
           </Link>
           <div>
             <S.TitleH4>Predição</S.TitleH4>

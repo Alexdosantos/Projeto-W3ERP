@@ -6,18 +6,15 @@ export const Wapper = styled.div`
   gap: 2%;
   margin: 0 0 0 5%;
 `;
-export const DivImgLeft = styled.div`
-  background: #eee;
-  border-radius: 50%;
-  width: 158%;
-  height: 150%;
-`;
+
 export const ImgLeft = styled.img``;
+
 export const TitleH4 = styled.h4`
+padding-top: 6%;
   color: #212121;
 
   font-family: Sora;
-  font-size: 20px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;

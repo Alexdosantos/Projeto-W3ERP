@@ -1,24 +1,34 @@
 import {Checkbox,InputAdornment,Typography,FormControlLabel} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { FetchPost } from "../../Service/FetchPosts";
+
 import ImgLogin from "../../assets/ImgLogin/ImgLogin.jpeg";
 import * as S from "./Login.Style";
 import "../../teste.css";
 
 const Login = () => {
   const [email, setEmail] = useState<string>();
-  const [password, setPassword] = useState<string>();
+  const [senha, setSenha] = useState<string>();
 
   const navigate = useNavigate();
 
   
 
-  const handleForm = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Email:", email);
-    console.log("Password:", password);
+    console.log("Senha:", senha);
 
-    navigate("/Dashbord")
+    try {
+      const data = await FetchPost({ email, senha})
+      console.log("Response:", data);
+      navigate("/Dashbord")
+    }catch (error) {
+      console.log(error)
+    }
+
+   
   };
 
   return (
@@ -52,8 +62,8 @@ const Login = () => {
             <S.StyledTextField
               label="Senha"
               type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
               InputProps={{
                 style: {
                   color: "black",

@@ -8,6 +8,7 @@ export const Container = styled.div`
 
 export const DivTable = styled.div`
   display: flex; 
-  margin-top: 100px;
+  margin-top: 10%;
+  gap: 1%;
 
 `
