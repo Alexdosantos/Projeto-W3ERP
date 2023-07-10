@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { DashbordData } from "../../Components/DashboardData/DashbordData";
 import { Layout } from "../../Components/Layout/Layout";
 import * as S from "./Dashboard.Style";
@@ -16,8 +16,6 @@ const Dashboard = () => {
     { id: 4, cliente: "Loja de Roupa", percentual: 5 },
   ];
 
-  
-
   const [produtos, setProdutos] = useState([]);
 
   const btnAlta = () => {
@@ -29,12 +27,12 @@ const Dashboard = () => {
   };
 
   
-  const api = GetUser();
 
   useEffect(() => {
     const fetchProdutos = async () => {
       try {
-        const response = await api.produtos();
+        
+        const response = await GetUser.produtos();
         setProdutos(response.content);
       } catch (error) {
         console.error("Erro ao obter produtos da API:", error);

@@ -1,7 +1,8 @@
 import { api } from "../../Hooks/UseApi";
 
-export const GetUser = () => ({
-  userName: async (token: string) => {
+export const GetUser = {
+  userName: async () => {
+    const token = localStorage.getItem("AUTH_TOKEN") || "";
     const response = await api.get("/central/usuario/me", {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -20,4 +21,4 @@ export const GetUser = () => ({
     });
     return response.data;
   },
-});
+};

@@ -8,13 +8,13 @@ export const UserLogin = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
 
-  const api = GetUser();
+
 
   useEffect(() => {
-    const authToken = localStorage.getItem("AUTH_TOKEN") as string;
+   
     const fetchGetUser = async () => {
       try {
-        const data = await api.userName(authToken);
+        const data = await GetUser.userName();
         setNome(data.nome);
         setEmail(data.email);
       } catch (err) {
@@ -23,7 +23,7 @@ export const UserLogin = () => {
     };
 
     fetchGetUser();
-  }, [api]);
+  }, []);
 
   return (
     <>
