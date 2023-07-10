@@ -3,11 +3,22 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 700px;  
-  border-radius: 24px;
-  
- 
-
+  border-radius: 24px; 
   box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
+  overflow: auto;
+
+  /* Ocultar a barra de rolagem */
+    scrollbar-width: thin; /* Para navegadores Firefox */
+    scrollbar-color: transparent transparent; /* Para navegadores Chrome e Safari */
+    
+    /* Estilos para navegadores Chrome e Safari */
+    &::-webkit-scrollbar {
+        width: 6px; /* Largura da barra de rolagem */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent; /* Cor do polegar da barra de rolagem */
+    }
 
  
 `;
@@ -28,6 +39,7 @@ export const DivThead = styled.thead`
   font-weight: 600;
   line-height: 150%;
   letter-spacing: 0.2px;  
+  
 
   color: #fff;
 `;

@@ -1,7 +1,7 @@
 import {Checkbox,InputAdornment,Typography,FormControlLabel} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useApi } from "../../Hooks/useApi";
+import { UseApi } from "../../Service/PostApi/PostUser";
 
 import ImgLogin from "../../assets/ImgLogin/ImgLogin.jpeg";
 import * as S from "./Login.Style";
@@ -13,7 +13,7 @@ const Login = () => {
   const [senha, setSenha] = useState<string>();
 
   const navigate = useNavigate();
-  const {login} = useApi()
+  const {login} = UseApi()
 
   
 
@@ -24,15 +24,19 @@ const Login = () => {
 
     try {
       const data = await login(email, senha);
-      console.log("Response:", data);
+      setToken(data.token);
+      console.log("Usuário conectado", data);
       navigate("/Dashbord")
     }catch (error) {
-      console.log(error)
+      console.log('Usuário  não encontrado')
     }
 
    
   };
-
+ 
+  const setToken = (token:string) => {
+    localStorage.setItem('authToken', token);
+  }
   return (
     <>
     <form action="" onSubmit={handleForm}>

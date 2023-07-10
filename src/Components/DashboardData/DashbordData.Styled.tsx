@@ -3,24 +3,13 @@ import styled from "styled-components";
 export const Container = styled.div`
   box-sizing: content-box;
 
-  margin-left: 25px;
-  margin-top: 50px;
-  width: 97%;
+  
+  margin: 5% 0 0 1%;
+  width: 95%;
   height: 295px;
   border-radius: 24px;
   background: #001c98;
 
-  @media (min-width: 600px) {
-    width: 95vw;
-     
-}
-
-@media (max-width: 3205px) {
-
-    width: 75vw;
-    margin-left: 45px;
-    
-}
 `;
 
 export const Container1 = styled.div`
@@ -28,9 +17,14 @@ export const Container1 = styled.div`
   justify-content: space-between;
   
 `;
+export const DivCardsInformation = styled.div`
+    display: flex;
+    gap: 4%;
+    margin: 2% 0 0 2%;
+`
 
 export const TextH4 = styled.h4`
-  padding: 25px 0 120px 50px;
+  padding: 15% 0 0 50px;
 
   font-size: 32px;
   font-family: Sora;

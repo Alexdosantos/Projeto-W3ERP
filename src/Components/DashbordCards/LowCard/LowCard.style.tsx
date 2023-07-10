@@ -1,42 +1,29 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 650%;
-  height: 124px;
-  margin-left: 15px;
+  width: 20%;
 
   border-radius: 24px;
   background: #02156a;
-  margin: -70px 40px 0 40px;
-  padding: 1px;
-
-  
-  /* @media (max-width: 3000px) {
-    width: 16vw;
-    height: 12vh;
-
-    border-radius: 20px;
-    margin: -70px 40px 0 40px;
-  } */
 `;
 export const Wapper = styled.div`
   display: flex;
 `;
 export const DivGraphics = styled.div`
-  margin-top:15px;
-`
+  margin-top: 5%;
+`;
 export const Container1 = styled.div`
- display: flex;
- flex-direction: column;
- gap:5px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+`;
 export const TextP = styled.p`
-display: flex;
+  display: flex;
 
-margin: 20px 0  0 0;
+  margin: 10% 5% 0 0;
 
   color: #c5cfff;
-  font-size: 13px;
+  font-size: 14px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 200;
@@ -45,32 +32,32 @@ margin: 20px 0  0 0;
 `;
 export const DivNumber = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 10%;
 `;
 export const Number = styled.h4`
   color: #fff;
 
-  font-size: 25px;
+  font-size: 200%;
   font-family: Sora;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;
 `;
 export const Porcentagem = styled.div`
-  width: 5vw;
+  width: 55%;
   height: 3vh;
- 
+
   align-items: flex-start;
   gap: 10px;
   border-radius: 90px;
-  background: #F33
+  background: #ff0303;
 `;
 
 export const TextPorcentagem = styled.p`
   color: #fff;
   text-align: center;
 
-  font-size: 20px;
+  font-size: 120%;
   font-family: Poppins;
   font-style: normal;
   font-weight: 400;

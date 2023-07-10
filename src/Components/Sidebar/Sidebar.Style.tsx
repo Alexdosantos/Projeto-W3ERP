@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const CardBoxGeneral = styled.div`
-  width: 275px;
+  
+  height: 1200%;
   display: flex;  
   align-items: center;
   flex-direction: column;  
-  height: 120vh;
+  
   background: #001c98;
 `;
 
