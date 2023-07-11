@@ -1,9 +1,7 @@
-export type UserToken ={
-    token:string
-    
-}
+export type UserToken = {
+  token: string;
+};
 
-export const response:UserToken ={
-  token: "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhcm5pYS5jb20uYnIiLCJpYXQiOjE2ODg3NjQ1OTksImV4cCI6MTY4ODg1MDk5OX0.D1N2LM4Hky_yLS-mGbXchCdHmra-pWu-_9DknAr-g-yUMa58fDTgG85LmHfhs3DdkLJugPGUwoxMsW3Nvrpx3A"
-  
-}
+export const response: UserToken = {
+  token:"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhcm5pYS5jb20uYnIiLCJpYXQiOjE2ODkwNDc5MjIsImV4cCI6MTY4OTEzNDMyMn0.216-L_wAP5DrITOxEGFKpGoUYYE82qb9-Fux5oq7GbVm4969UlAx_dKlxUoHEygOGtLQkzrveuVXTf64i0YFEg",
+};

@@ -35,7 +35,7 @@ const Login = () => {
   };
  
   const setToken = (token:string) => {
-    localStorage.setItem('authToken', token);
+    localStorage.setItem('AUTH_TOKEN', token);
   }
   return (
     <>
