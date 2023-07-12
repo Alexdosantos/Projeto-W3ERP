@@ -37,7 +37,7 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
           </tr>
         </S.DivThead>
         <tbody>
-          {dados.map((item) => (
+          {dados && dados.length > 0 &&dados.map((item) => (
             <tr key={item.id}>
               <S.Td>{item.id}</S.Td>
               {item.nome && <S.Td>{item.nome}</S.Td>}

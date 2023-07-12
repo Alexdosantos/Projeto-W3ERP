@@ -1,9 +1,11 @@
 import { PieChart, Pie, Cell, Label } from "recharts";
 
 
-
-const Grafics = () => {
-  const data = [{ name: "Group A", value: 50 }];
+type GraficProps = {
+  data?: Array<{ name: string, value: number }>
+};
+const Grafics = ({data}:GraficProps) => {
+  
 
   const COLORS = ["#796CE0"];
 
@@ -23,12 +25,12 @@ const Grafics = () => {
         paddingAngle={70}
         dataKey="value"
       >
-        {data.map((entry, index) => (
+        {data && data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
         ))}
 
         <Label
-          value={data[0].value}
+          value={data && data[0].value}
           position="center"
           fill="#FFF"
           formatter={formatLabel}

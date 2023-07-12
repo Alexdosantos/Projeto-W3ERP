@@ -5,15 +5,16 @@ type CardBaixaProps ={
   title:string
   total:number | string
   porcentagem: number | string
+  data?: Array<{ name: string, value: number }>
 }
 
-const LowCard = ({title ,porcentagem,total}:CardBaixaProps) => {
+const LowCard = ({title ,porcentagem,total ,data}:CardBaixaProps) => {
   return (
     <>
       <S.Container>
         <S.Wapper>
           <S.DivGraphics>
-            <Grafics />
+            <Grafics data={data}/>
           </S.DivGraphics>
           <S.Container1>
             <S.TextP>
@@ -25,7 +26,7 @@ const LowCard = ({title ,porcentagem,total}:CardBaixaProps) => {
             <S.DivNumber>
               <S.Number>{total}</S.Number>
               <S.Porcentagem>
-                <S.TextPorcentagem>+{porcentagem}%</S.TextPorcentagem>
+                <S.TextPorcentagem>{porcentagem}%</S.TextPorcentagem>
               </S.Porcentagem>
             </S.DivNumber>
           </S.Container1>

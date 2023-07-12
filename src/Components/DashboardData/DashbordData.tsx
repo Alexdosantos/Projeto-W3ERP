@@ -3,9 +3,17 @@ import Caledario from "../../assets/Icons/calendar.svg";
 
 import HighCard from "../DashbordCards/HighCard/HighCard";
 import LowCard from "../DashbordCards/LowCard/LowCard";
+import { useQuery } from "react-query";
+import { GetUser } from "../../Service/GetApi/GetUser";
 
 
 export const DashbordData = () => {
+  const {data:resumo } = useQuery('resumo' , GetUser.resumo)
+  const graficsProdutoAlta= [{ name: 'Produto Alta', value: resumo?.percentualTotalProdutosAlta}];
+  const graficsProdutoBaixa = [{ name: 'Produto Baixa', value:resumo?.percentualTotalProdutosBaixa }];
+  const graficsPClientAlta = [{ name: 'Cliente Alta', value: resumo?.percentualTotalClientesAlta }];
+  const graficsClienteBaixa = [{ name: 'Cliente Baixa', value: resumo?.percentualTotalClientesBaixa }];
+
   return (
     <>
       <S.Container>
@@ -32,10 +40,10 @@ export const DashbordData = () => {
           </S.ContainerCaledarios>
         </S.Container1>
         <S.DivCardsInformation>
-          <HighCard title="Produtos" total="82" porcentagem="25" />
-          <LowCard title="Produtos" total="32" porcentagem="25" />
-          <HighCard title="Clientes" total="22" porcentagem="25" />
-          <LowCard title="Clientes" total="29" porcentagem="25" />
+          <HighCard data={graficsProdutoAlta} title="Produtos" total={resumo?.quantidadeProdutosAlta} porcentagem={resumo?.percentualVariacaoProdutosAlta}  />
+          <LowCard data={graficsProdutoBaixa} title="Produtos" total={resumo?.quantidadeProdutosBaixa} porcentagem={resumo?.percentualVariacaoProdutosBaixa} />
+          <HighCard data={graficsPClientAlta} title="Clientes" total={resumo?.quantidadeClientesAlta} porcentagem={resumo?.percentualVariacaoClientesAlta} />
+          <LowCard data={graficsClienteBaixa} title="Clientes" total={resumo?.quantidadeClientesBaixa} porcentagem={resumo?.percentualVariacaoClientesBaixa}  />
         </S.DivCardsInformation>
 
         

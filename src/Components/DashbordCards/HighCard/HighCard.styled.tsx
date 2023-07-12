@@ -23,7 +23,8 @@ export const Container1 = styled.div`
 export const TextP = styled.p`
 display: flex;
 
-margin: 10% 5%  0 0;
+  margin: 10% 0;
+  gap: -1%;
 
   color: #c5cfff;
   font-size: 14px;
@@ -38,6 +39,7 @@ export const DivNumber = styled.div`
   gap: 10%;
 `;
 export const Number = styled.h4`
+margin-top: -10%;
   color: #fff;
 
   font-size: 200%;
@@ -48,12 +50,14 @@ export const Number = styled.h4`
 `;
 export const Porcentagem = styled.div`
   width: 55%;
-  height: 3vh;
+  height: 85%;
+  margin-top: -4%;
+
  
   align-items: flex-start;
   gap: 10px;
   border-radius: 90px;
-  background: #00C247
+  background: #00C247;
 `;
 
 export const TextPorcentagem = styled.p`

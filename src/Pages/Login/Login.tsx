@@ -13,7 +13,7 @@ const Login = () => {
   const [senha, setSenha] = useState<string>();
 
   const navigate = useNavigate();
-  const {login} = UseApi()
+  const api = UseApi()
 
   
 
@@ -23,7 +23,7 @@ const Login = () => {
     console.log("Senha:", senha);
 
     try {
-      const data = await login(email, senha);
+      const data = await api.login(email, senha);
       setToken(data.token);
       console.log("Usuário conectado", data);
       navigate("/Dashbord")

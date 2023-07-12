@@ -10,69 +10,32 @@ export const GetUser = {
     });
     return response.data;
   },
-  produtos: async ( ) => {
+  produtos: async () => {
     const token = localStorage.getItem("AUTH_TOKEN") || "";
     const response = await api.get("/app/produto", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-     
-      
     });
-    return response.data;
+
+    return response.data.content;
   },
-  produtosAlta: async ( ) => {
-    const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/app/produtos?classificacao=EM_ALTA", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-     
-      
-    });
-    return response.data;
-  },
-  produtosBaixa: async ( ) => {
-    const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/app/produtos?classificacao=EM_BAIXA", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-     
-      
-    });
-    return response.data;
-  },
-  cliente: async ( ) => {
+
+  cliente: async () => {
     const token = localStorage.getItem("AUTH_TOKEN") || "";
     const response = await api.get("/app/cliente", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-     
-      
     });
-    return response.data;
+    return response.data.content;
   },
-  clienteAlta: async ( ) => {
+  resumo: async () => {
     const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/app/clientes?classificacao=EM_ALTA", {
+    const response = await api.get("/app/dashboard/resumo", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-     
-      
-    });
-    return response.data;
-  },
-  clienteBaixa: async ( ) => {
-    const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/app/clientes?classificacao=EM_BAIXA", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-     
-      
     });
     return response.data;
   },

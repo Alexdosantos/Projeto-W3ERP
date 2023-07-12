@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { DashbordData } from "../../Components/DashboardData/DashbordData";
 import { Layout } from "../../Components/Layout/Layout";
 import * as S from "./Dashboard.Style";
@@ -7,110 +7,20 @@ import { NavTable } from "../../Components/NavTable/NavTable";
 import ImgProducts from "../../assets/Icons/IconBlue.png";
 import ImgClients from "../../assets/Icons/IconClients.png";
 import { GetUser } from "../../Service/GetApi/GetUser";
+import { useQuery } from "react-query";
+
+type DashProps = {
+  classificacao: string;
+};
 
 const Dashboard = () => {
-  const [produtos, setProdutos] = useState([]);
-  const [clientes, setClientes] = useState([]);
   const [exibirProdutosAlta, setExibirProdutosAlta] = useState(false);
   const [exibirProdutosBaixa, setExibirProdutosBaixa] = useState(false);
   const [exibirClientesAlta, setExibirClientesAlta] = useState(false);
   const [exibirClientesBaixa, setExibirClientesBaixa] = useState(false);
 
-  useEffect(() => {
-    const fetchProdutos = async () => {
-      try {
-        const { content } = await GetUser.produtos();
-        setProdutos(content);
-      } catch (error) {
-        console.error("Erro ao obter produtos da API:", error);
-      }
-    };
-
-    fetchProdutos();
-  }, []);
-
-  useEffect(() => {
-    const fetchClientes = async () => {
-      try {
-        const { content } = await GetUser.cliente();
-        setClientes(content);
-      } catch (error) {
-        console.error("Erro ao obter clientes da API:", error);
-      }
-    };
-
-    fetchClientes();
-  }, []);
-
-  useEffect(() => {
-    const fetchProdutosAlta = async () => {
-      try {
-        const { content } = await GetUser.produtosAlta();
-        setProdutos(content);
-      } catch (error) {
-        console.error("Erro ao obter produtos em alta da API:", error);
-      }
-    };
-
-    fetchProdutosAlta();
-  }, []);
-
-  useEffect(() => {
-    const fetchProdutosBaixa = async () => {
-      try {
-        const { content } = await GetUser.produtosBaixa();
-        setProdutos(content);
-      } catch (error) {
-        console.error("Erro ao obter produtos em baixa da API:", error);
-      }
-    };
-
-    fetchProdutosBaixa();
-  }, []);
-
-  useEffect(() => {
-    const fetchClientesBaixa = async () => {
-      try {
-        const { data } = await GetUser.clienteBaixa();
-        setClientes(data);
-      } catch (error) {
-        console.error("Erro ao obter clientes em baixa da API:", error);
-      }
-    };
-
-    fetchClientesBaixa();
-  }, []);
-
-  const btnAlta = () => {
-    setExibirClientesAlta(true);
-    setExibirClientesBaixa(false);
-  };
-  const btnBaixa = () => {
-    setExibirClientesBaixa(true);
-    setExibirClientesAlta(false);
-  };
-  const btnProdutoAlta = () => {
-    setExibirProdutosAlta(true);
-    setExibirProdutosBaixa(false);
-  };
-  const btnProdutoBaixa = () => {
-    setExibirProdutosAlta(true);
-    setExibirProdutosBaixa(false);
-  };
-
-
-
-  const produtosExibidos = exibirProdutosAlta
-    ? produtos.filter(({ classificacao }) => classificacao === "EM_ALTA")
-    : exibirProdutosBaixa
-    ? produtos.filter(({ classificacao }) => classificacao === "EM_BAIXA")
-    : produtos;
-
-  const clientesExibidos = exibirClientesAlta
-    ? clientes.filter(({ classificacao }) => classificacao === "EM_ALTA")
-    : exibirClientesBaixa
-    ? clientes.filter(({ classificacao }) => classificacao === "EM_BAIXA")
-    : clientes;
+  const { data: produtos } = useQuery("produtos", GetUser.produtos);
+  const { data: clientes } = useQuery("clients", GetUser.cliente);
 
   return (
     <>
@@ -123,13 +33,29 @@ const Dashboard = () => {
               <NavTable
                 img={ImgProducts}
                 title="Produtos"
-                onClickAlta={btnProdutoAlta}
-                onClickBaixa={btnProdutoBaixa}
+                onClickAlta={() => {
+                  setExibirProdutosAlta(true), setExibirProdutosBaixa(false);
+                }}
+                onClickBaixa={() => {
+                  setExibirProdutosAlta(false), setExibirProdutosBaixa(true);
+                }}
               />
             }
             id="ID"
             percentual="Percentual"
-            dados={produtosExibidos}
+            dados={
+              exibirProdutosAlta
+                ? produtos.filter(
+                    ({ classificacao }: DashProps) =>
+                      classificacao === "EM_ALTA"
+                  )
+                : exibirProdutosBaixa
+                ? produtos.filter(
+                    ({ classificacao }: DashProps) =>
+                      classificacao === "EM_BAIXA"
+                  )
+                : produtos
+            }
           />
 
           <TabelaProducts
@@ -137,13 +63,29 @@ const Dashboard = () => {
               <NavTable
                 img={ImgClients}
                 title="Clientes"
-                onClickAlta={btnAlta}
-                onClickBaixa={btnBaixa}
+                onClickAlta={() => {
+                  setExibirClientesAlta(true), setExibirClientesBaixa(false);
+                }}
+                onClickBaixa={() => {
+                  setExibirClientesAlta(false), setExibirClientesBaixa(true);
+                }}
               />
             }
             id="ID"
             percentual="Percentual"
-            dados={clientesExibidos}
+            dados={
+              exibirClientesAlta
+                ? clientes.filter(
+                    ({ classificacao }: DashProps) =>
+                      classificacao === "EM_ALTA"
+                  )
+                : exibirClientesBaixa
+                ? clientes.filter(
+                    ({ classificacao }: DashProps) =>
+                      classificacao === "EM_BAIXA"
+                  )
+                : clientes
+            }
           />
         </S.DivTable>
       </Layout>

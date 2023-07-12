@@ -15,12 +15,13 @@ export const DivGraphics = styled.div`
 export const Container1 = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5%;
+  gap: 4%;
 `;
 export const TextP = styled.p`
   display: flex;
 
-  margin: 10% 5% 0 0;
+  margin: 10% 0;
+  gap: -1%;
 
   color: #c5cfff;
   font-size: 14px;
@@ -35,6 +36,8 @@ export const DivNumber = styled.div`
   gap: 10%;
 `;
 export const Number = styled.h4`
+margin-top: -10%;
+
   color: #fff;
 
   font-size: 200%;
@@ -45,15 +48,18 @@ export const Number = styled.h4`
 `;
 export const Porcentagem = styled.div`
   width: 55%;
-  height: 3vh;
+  height: 85%;
+  margin-top: -4%;
 
   align-items: flex-start;
-  gap: 10px;
+  gap: 1%;
   border-radius: 90px;
   background: #ff0303;
 `;
 
 export const TextPorcentagem = styled.p`
+margin-top: 1%;
+
   color: #fff;
   text-align: center;
 

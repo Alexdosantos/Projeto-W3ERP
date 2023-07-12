@@ -5,15 +5,17 @@ type CardBaixaProps ={
   title:string
   total:number | string
   porcentagem: number | string
+  data?: Array<{ name: string, value: number }>
+  
 }
 
-const HighCard = ({title ,porcentagem,total}:CardBaixaProps) => {
+const HighCard = ({title ,porcentagem,total ,data}:CardBaixaProps) => {
   return (
     <>
       <S.Container>
         <S.Wapper>
           <S.DivGraphics>
-            <Grafics />
+            <Grafics data={data}/>
           </S.DivGraphics>
           <S.Container1>
             <S.TextP>

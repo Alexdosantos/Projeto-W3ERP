@@ -28,6 +28,7 @@ export const NavTable = ({
     setIsBaixaActive(true);
     onClickBaixa();
   };
+
   return (
     <S.Container>
       <S.ContainerOne>
