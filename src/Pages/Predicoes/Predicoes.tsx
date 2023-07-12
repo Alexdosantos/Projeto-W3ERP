@@ -1,51 +1,37 @@
+import React from "react";
 import * as S from "./Predicoes.Style";
 import { Layout } from "../../Components/Layout/Layout";
 import { Search } from "../../Components/Search/Search";
 import { CardsInformation } from "../../Components/PredicoesCards/CardsInformation";
 
+import { useQuery } from "react-query";
+import { GetUser } from "../../Service/GetApi/GetUser";
+
 const Predicoes = () => {
-  const data = [
-    { company: "Hotel", produto: "Pão", proximaCompra: "21/02/23" },
-    { company: "Padaria", produto: "Arroz", proximaCompra: "10/05/2023" },
-    { company: "Mercado", produto: "Macarrão", proximaCompra: "Tomate" },
-    { company: "Hotel", produto: "Frango", proximaCompra: "Batatas" },
-    { company: "Hotel", produto: "Leite", proximaCompra: "Pão" },
-    { company: "Hotel", produto: "Álcool", proximaCompra: "Desinfetante" },
-    { company: "Hotel", produto: "Sabonete", proximaCompra: "Shampoo" },
-    { company: "Hotel", produto: "Pano", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-    { company: "Hotel", produto: "Maçã", proximaCompra: "Banana" },
-  ];
+  const { data: response } = useQuery("produtos", GetUser.predicaoList);
+  console.log(response)
 
   return (
-    <>
-      <Layout>
-        <S.Container>
-          <S.Title>Predições</S.Title>
-          <Search placeholder="Pesquise uma palavra-chave" />
-        </S.Container>
-        <S.DivCardInformation>
-          {data.map((item, index) => (
+    <Layout>
+      <S.Container>
+        <S.Title>Predições</S.Title>
+        <Search placeholder="Pesquise uma palavra-chave" />
+      </S.Container>
+      <S.DivCardInformation>
+        {response &&
+          response.map((item, index) => (
             <CardsInformation
               key={index}
-              company={item.company}
-              dados={[item]}
+              company={item.nome}
+              dados={item.produtos.map((produto) => ({
+                produto: produto.nome,
+                proximaCompra: produto.proximaCompra,
+              }))}
             />
           ))}
-        </S.DivCardInformation>
-      </Layout>
-    </>
+      </S.DivCardInformation>
+    </Layout>
   );
 };
+
 export default Predicoes;

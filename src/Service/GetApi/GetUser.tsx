@@ -2,41 +2,75 @@ import { api } from "../../Hooks/UseApi";
 
 export const GetUser = {
   userName: async () => {
-    const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/central/usuario/me", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data;
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/central/usuario/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao obter o nome do usuário:", error);
+      throw error;
+    }
   },
   produtos: async () => {
-    const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/app/produto", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/app/produto", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
-    return response.data.content;
+      return response.data.content;
+    } catch (error) {
+      console.error("Erro ao obter os produtos:", error);
+      throw error;
+    }
   },
 
   cliente: async () => {
-    const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/app/cliente", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data.content;
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/app/cliente", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data.content;
+    } catch (error) {
+      console.error("Erro ao obter os clientes:", error);
+      throw error;
+    }
   },
   resumo: async () => {
-    const token = localStorage.getItem("AUTH_TOKEN") || "";
-    const response = await api.get("/app/dashboard/resumo", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return response.data;
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/app/dashboard/resumo", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao obter o resumo:", error);
+      throw error;
+    }
+  },
+  predicaoList: async () => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/app/predicao", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data.content;
+    } catch (error) {
+      console.error("Erro ao obter o predição list:", error);
+      throw error;
+    }
   },
 };

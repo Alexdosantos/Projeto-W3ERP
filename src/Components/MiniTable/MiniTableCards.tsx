@@ -18,7 +18,7 @@ const MiniTableCards = ({ dados }: MiniTableProps) => {
           </tr>
         </thead>
         <tbody>
-          {produtos.map((item, index) => (
+          {produtos && produtos.map((item, index) => (
             <tr key={index}>
               <S.Td>{item.produto}</S.Td>
               {index < proximasCompras.length && (
