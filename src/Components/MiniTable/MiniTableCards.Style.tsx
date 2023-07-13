@@ -40,7 +40,7 @@ export const Td = styled.td`
 color: #424242;
 
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 140%;
@@ -48,7 +48,7 @@ color: #424242;
     
 `
 export const Td1 = styled.td`
-padding: 0 0 0 40%;
+padding: 0 0 0 20%;
 
 color: #424242;
 

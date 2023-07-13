@@ -2,41 +2,37 @@ import * as S from "./PredicoesDatails.Style";
 import { Link } from "react-router-dom";
 import { Layout } from "../../../Components/Layout/Layout";
 import ImgLeft from "../../../assets/Icons/left-small.svg.png";
+import { useParams } from "react-router-dom";
 import { BannerDatailsPredicoes } from "../../../Components/BannerInformation/BannerDatailsPredicoes";
 import TabelaProducts from "../../../Components/TableDasboard/TableProducts";
+import { GetUser } from "../../../Service/GetApi/GetUser";
+import { useQuery } from "react-query";
+import { ReactNode } from "react";
+
+export interface Root {
+  cpfcnpj: string;
+  email: string;
+  id: string;
+  nome: string;
+  telefone: string;
+  whatsapp: string;
+}
+
+  
 
 export const PredicoesDatails = () => {
-  const data = [
-    {
-      id: 1,
-      produto: "Produto A",
-      ultimaCompra: "01/01/2022",
-      qtd: 10,
-      darbaixa: "sim",
-    },
-    {
-      id: 2,
-      produto: "Produto B",
-      ultimaCompra: "05/02/2022",
-      qtd: 15,
-      darbaixa: "sim",
-    },
-    {
-      id: 3,
-      produto: "Produto C",
-      ultimaCompra: "10/03/2022",
-      qtd: 8,
-      darbaixa: "sim",
-    },
-    {
-      id: 4,
-      produto: "Produto D",
-      ultimaCompra: "15/04/2022",
-      qtd: 20,
-      darbaixa: "sim",
-    },
-    // Adicione mais objetos conforme necessário
-  ];
+  const { id } = useParams();
+  const { data: historico } = useQuery<Root[]>(["predicaoHistorico", id], () =>
+    GetUser.predicaoHistorico(id)
+  );
+  const { data: esgotado } = useQuery(["predicaoEsgotado", id], () =>
+    GetUser.predicaoEsgotados(id)
+  );
+  const { data: clienteId } = useQuery(["cliente", id], () =>
+    GetUser.clienteId(id)
+  );
+  console.log(clienteId);
+
   return (
     <>
       <Layout>
@@ -51,22 +47,22 @@ export const PredicoesDatails = () => {
           </div>
         </S.Wapper>
         <BannerDatailsPredicoes
-          title="Hotel Ibis"
-          phone="11 99448-5214"
-          email="hotelIbis@gmail.com"
+          title={clienteId?.nome}
+          phone={clienteId?.whatsapp}
+          email={clienteId?.email}
         />
         <S.DivTable>
           <TabelaProducts
             nav="Histórico"
             id="ID"
             percentual="Percentual"
-            dados={data}
+            dados={historico}
           />
           <TabelaProducts
             nav="Histórico"
             id="ID"
             percentual="Percentual"
-            dados={data}
+            dados={esgotado}
           />
         </S.DivTable>
       </Layout>

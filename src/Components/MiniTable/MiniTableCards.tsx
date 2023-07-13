@@ -1,12 +1,11 @@
 import * as S from "./MiniTableCards.Style";
 
 type MiniTableProps = {
-  dados: Array<{ produto: string; proximaCompra: string }>;
+  dados: Array<{ nome: string; proximaCompra: string , id:string }>;
 };
 
 const MiniTableCards = ({ dados }: MiniTableProps) => {
-  const produtos = dados.slice(0, 3);
-  const proximasCompras = dados.slice(0, 3);
+
 
   return (
     <S.Container>
@@ -18,14 +17,17 @@ const MiniTableCards = ({ dados }: MiniTableProps) => {
           </tr>
         </thead>
         <tbody>
-          {produtos && produtos.map((item, index) => (
-            <tr key={index}>
-              <S.Td>{item.produto}</S.Td>
-              {index < proximasCompras.length && (
-                <S.Td1>{proximasCompras[index].proximaCompra}</S.Td1>
-              )}
-            </tr>
-          ))}
+          
+            {dados && dados.map((item) => (
+              <tr key={item.id}>
+                <S.Td>{item.nome}</S.Td>
+                
+                  <S.Td1>
+                    <strong>{item.proximaCompra}</strong>
+                  </S.Td1>
+                
+              </tr>
+            ))}
         </tbody>
       </table>
     </S.Container>

@@ -73,4 +73,49 @@ export const GetUser = {
       throw error;
     }
   },
+  predicaoHistorico: async (id:number | string) => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get(`/app/predicao/${id}/historico `, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          
+        },
+      });
+      return response.data.content;
+    } catch (error) {
+      console.error("Erro ao obter o predição list:", error);
+      throw error;
+    }
+  },
+  predicaoEsgotados: async (id:number) => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get(`/app/predicao/${id}/esgotando `, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          
+        },
+      });
+      return response.data.content;
+    } catch (error) {
+      console.error("Erro ao obter o predição list:", error);
+      throw error;
+    }
+  },
+  clienteId: async (id:number) => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get(`/app/cliente/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          
+        },
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao obter o predição list:", error);
+      throw error;
+    }
+  },
 };

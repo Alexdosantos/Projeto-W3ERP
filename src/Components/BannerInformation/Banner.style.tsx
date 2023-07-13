@@ -27,12 +27,14 @@ export const DivContact = styled.div`
 `;
 export const DivPhone = styled.div`
   display: flex;
+ 
 `;
 export const DivEmail = styled.div`
   display: flex;
 `;
 export const TextPhone = styled.p`
   color: #fff;
+  
 
   font-family: Poppins;
   font-size: 16px;

@@ -23,5 +23,6 @@ padding-top: 6%;
 
 export const DivTable =styled.div`
   display: flex;
-  margin: 5% 0 0 5%;
+  margin: 5% 2% 0 2%;
+  gap: 5%;
 `

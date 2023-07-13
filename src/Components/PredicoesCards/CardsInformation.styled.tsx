@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Container = styled.div`
 
   width: 22%;
-  height: 32%;
-  margin: 0 0 0 0;
+  height: 42%;
+  margin: 2% 0 0 0;
   flex-shrink: 0;
   border-radius: 24px;
   background: var(--branco, #fff);
@@ -18,18 +18,18 @@ export const Wapper = styled.div`
 `;
 export const DivUser = styled.div`
   display: flex;
-  gap: 5px;
+  gap: 15px;
 `;
 export const ImgUser = styled.img`
-  padding: 20% 0 0 0;
+  padding: 40% 0 0 5%;
 `;
 
 export const TitleUser = styled.h4`
-  margin: 15% 0 0 0;
+  margin: 12% 0 0 0;
   color: #212121;
 
   font-family: Poppins;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: 150%;

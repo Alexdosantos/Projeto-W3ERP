@@ -19,8 +19,10 @@ export const Title = styled.h4`
 export const DivCardInformation = styled.div`
   display: flex;
   flex-wrap: wrap;
+ 
+  
    
-  gap: 3%;
+  gap: 1%;
   width: 90%;
   height: 750%;
   padding: 2% 0 0 3%;

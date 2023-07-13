@@ -2,14 +2,17 @@ import * as S from "./Search.styled"
 import { AiOutlineSearch } from "react-icons/ai";
 
 
+
 type SearchProps = {
   placeholder: string;
+  onKeyDown: any;
+ 
 };
 
-export const Search = ({ placeholder }: SearchProps) => {
+export const Search = ({ placeholder ,onKeyDown }: SearchProps) => {
   return (
     <S.Container>
-      <S.Input type="text" placeholder={placeholder} />
+      <S.Input type="text" placeholder={placeholder}  onKeyDown={onKeyDown} />
       <div>
       <AiOutlineSearch size={40} 
       style={{ fontSize:
