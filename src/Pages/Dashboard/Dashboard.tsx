@@ -65,9 +65,9 @@ const Dashboard = () => {
               produtosData.map((item) => ({
                 id: item.id,
                 nome: item.nome,
-                imagem: (
+                imagemProdutos: (
                   <Link to={`/Produto/${item.id}`}>
-                    <img src={ImgNext} alt="" />
+                    <img src={ImgNext} alt="next" />
                   </Link>
                 ),
                 percentual: item.percentual,
@@ -97,6 +97,13 @@ const Dashboard = () => {
               clientesData.map((item) => ({
                 id: item.id,
                 cliente: item.nome,
+                imagemClientes: (
+                  //ALEX ,ALEX ,ALEX ,ALEX
+                  //RELIZAR A TROCA PARA ROTA DE CLIENTES
+                  <Link to={`/Produto/${item.id}`}>
+                    <img src={ImgNext} alt="next" />
+                  </Link>
+                ),
                 percentual: item.percentual,
               }))
             }

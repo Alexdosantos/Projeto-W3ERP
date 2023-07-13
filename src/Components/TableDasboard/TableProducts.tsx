@@ -18,7 +18,8 @@ type TableProps = {
     status?: string | number;
     classificacao?: string;
     quantidade?: number;
-    imagem?: string
+    imagemProdutos?: string
+    imagemClientes?: string
   }>;
 };
 
@@ -35,11 +36,13 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
             {!!dados?.[0]?.classificacao && <th>Status</th>}
             {!!dados?.[0]?.cliente && <th>Cliente</th>}
             {!!dados?.[0]?.status && <th>Status</th>}
+            
            
             {dados?.[0]?.hasOwnProperty("percentual") && (
               <S.ThRight>Porcentagem</S.ThRight>
             )}
-
+            {!!dados?.[0]?.imagemProdutos && <th></th>}
+            {!!dados?.[0]?.imagemClientes && <th></th>}
             {!!dados?.[0]?.ultimaCompra && <th>Última Compra</th>}
             {dados?.[0]?.hasOwnProperty("quantidade") && (
               <S.ThRight>Qtd.</S.ThRight>
@@ -62,9 +65,11 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
                 {dados?.[0]?.hasOwnProperty("percentual") && (
                   <S.Td>{item.percentual}%</S.Td>
                 )}
-                <S.Td>{item.imagem}</S.Td>
-
+                
+                {item.imagemProdutos && <S.Td>{item.imagemProdutos}</S.Td>}
+                {item.imagemClientes && <S.Td>{item.imagemClientes}</S.Td>}
                 {item.ultimaCompra && <S.Td>{item.ultimaCompra}</S.Td>}
+                
                 {dados?.[0]?.hasOwnProperty("quantidade") && (
                   <S.Td>{item.quantidade}</S.Td>
                 )}
