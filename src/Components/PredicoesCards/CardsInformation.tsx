@@ -2,15 +2,19 @@ import * as S from "./CardsInformation.styled";
 import ImgUser from "../../assets/Icons/Icon-user.png";
 import ImgRight from "../../assets/Icons/right.svg";
 
-import MiniTableCards from "../MiniTable/MiniTableCards";
+import MiniTableCards from "../SmallTable/SmallTableCards";
 import { Link } from "react-router-dom";
 
 type CardsInformationProps = {
-  company:string
-  dados: Array<{ nome: string; proximaCompra: string ,}>;
-  id: number 
+  company: string;
+  dados: []
+  id: number;
 };
-export const CardsInformation = ({ dados, company , id}: CardsInformationProps) => {
+export const CardsInformation = ({
+  dados,
+  company,
+  id,
+}: CardsInformationProps) => {
   return (
     <S.Container>
       <S.Wapper>
@@ -24,7 +28,7 @@ export const CardsInformation = ({ dados, company , id}: CardsInformationProps) 
           </div>
         </S.DivUser>
         <Link to={`/Predicoes/${id}`}>
-        <img src={ImgRight} alt="" />
+          <img src={ImgRight} alt="" />
         </Link>
       </S.Wapper>
       <S.DivInformation>

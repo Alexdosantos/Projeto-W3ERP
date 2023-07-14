@@ -6,7 +6,7 @@ import TabelaProducts from "../../Components/TableDasboard/TableProducts";
 import { NavTable } from "../../Components/NavTable/NavTable";
 import ImgProducts from "../../assets/Icons/IconBlue.png";
 import ImgClients from "../../assets/Icons/IconClients.png";
-import ImgNext from "../../assets/Icons/check-one.svg"
+import ImgNext from "../../assets/Icons/check-one.svg";
 import { GetUser } from "../../Service/GetApi/GetUser";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
@@ -26,15 +26,23 @@ const Dashboard = () => {
 
   // Lógica de mapeamento para a prop 'dados' dos componentes TabelaProducts
   const produtosData = exibirProdutosAlta
-    ? produtos.filter(({ classificacao }: DashProps) => classificacao === "EM_ALTA")
+    ? produtos.filter(
+        ({ classificacao }: DashProps) => classificacao === "EM_ALTA"
+      )
     : exibirProdutosBaixa
-    ? produtos.filter(({ classificacao }: DashProps) => classificacao === "EM_BAIXA")
+    ? produtos.filter(
+        ({ classificacao }: DashProps) => classificacao === "EM_BAIXA"
+      )
     : produtos;
 
   const clientesData = exibirClientesAlta
-    ? clientes.filter(({ classificacao }: DashProps) => classificacao === "EM_ALTA")
+    ? clientes.filter(
+        ({ classificacao }: DashProps) => classificacao === "EM_ALTA"
+      )
     : exibirClientesBaixa
-    ? clientes.filter(({ classificacao }: DashProps) => classificacao === "EM_BAIXA")
+    ? clientes.filter(
+        ({ classificacao }: DashProps) => classificacao === "EM_BAIXA"
+      )
     : clientes;
 
   return (
@@ -59,14 +67,14 @@ const Dashboard = () => {
               />
             }
             id="ID"
-            percentual="Percentual"
+            
             dados={
               produtosData &&
               produtosData.map((item) => ({
                 id: item.id,
                 nome: item.nome,
                 imagemProdutos: (
-                  <Link to={`/Produto/${item.id}`}>
+                  <Link to={`/Produtos/detalhes/produtos/${item.id}`}>
                     <img src={ImgNext} alt="next" />
                   </Link>
                 ),
@@ -91,7 +99,7 @@ const Dashboard = () => {
               />
             }
             id="ID"
-            percentual="Percentual"
+          
             dados={
               clientesData &&
               clientesData.map((item) => ({
@@ -100,7 +108,7 @@ const Dashboard = () => {
                 imagemClientes: (
                   //ALEX ,ALEX ,ALEX ,ALEX
                   //RELIZAR A TROCA PARA ROTA DE CLIENTES
-                  <Link to={`/Produto/${item.id}`}>
+                  <Link to={`/Produtos/detalhes/clientes/${item.id}`}>
                     <img src={ImgNext} alt="next" />
                   </Link>
                 ),

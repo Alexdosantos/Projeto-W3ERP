@@ -2,10 +2,11 @@
 import { ReactNode } from "react";
 import * as S from "./TableProducts.style";
 
+
 type TableProps = {
   nav: ReactNode;
   id: string;
-  percentual: string;
+ 
 
   dados: Array<{
     id: number | string;
@@ -18,8 +19,8 @@ type TableProps = {
     status?: string | number;
     classificacao?: string;
     quantidade?: number;
-    imagemProdutos?: string
-    imagemClientes?: string
+    imagemProdutos?: string;
+    imagemClientes?: string;
   }>;
 };
 
@@ -36,8 +37,7 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
             {!!dados?.[0]?.classificacao && <th>Status</th>}
             {!!dados?.[0]?.cliente && <th>Cliente</th>}
             {!!dados?.[0]?.status && <th>Status</th>}
-            
-           
+
             {dados?.[0]?.hasOwnProperty("percentual") && (
               <S.ThRight>Porcentagem</S.ThRight>
             )}
@@ -65,11 +65,13 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
                 {dados?.[0]?.hasOwnProperty("percentual") && (
                   <S.Td>{item.percentual}%</S.Td>
                 )}
-                
+
                 {item.imagemProdutos && <S.Td>{item.imagemProdutos}</S.Td>}
+
                 {item.imagemClientes && <S.Td>{item.imagemClientes}</S.Td>}
+
                 {item.ultimaCompra && <S.Td>{item.ultimaCompra}</S.Td>}
-                
+
                 {dados?.[0]?.hasOwnProperty("quantidade") && (
                   <S.Td>{item.quantidade}</S.Td>
                 )}

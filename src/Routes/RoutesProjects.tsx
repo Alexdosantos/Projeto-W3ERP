@@ -5,6 +5,7 @@ import Predicoes from "../Pages/Predicoes/Predicoes";
 import Produtos from "../Pages/Produtos/Produtos";
 import { PredicoesDatails } from "../Pages/Predicoes/PredicoesDatails/PredicoesDatails";
 import { ProdutosDetails} from "../Pages/Produtos/ProdutcsDetails/ProdutosDetails";
+import { ClienteDetalhes } from "../Pages/ClientesDatails/ClienteDetalhes";
 
 
 const RoutesProjects = () => {
@@ -14,11 +15,12 @@ const RoutesProjects = () => {
         <Routes>
           <Route path="/" element={<Login />} />
          
-          <Route path="Dashbord" element={<Dashbord />} />
+          <Route path="Dashboard" element={<Dashbord />} />
           <Route path="Predicoes" element={<Predicoes />} />
           <Route  path="/Predicoes/:id" element={<PredicoesDatails/>}/>
           <Route path="Produtos" element={<Produtos />} /> 
-          <Route path="Produtos/:id" element={<ProdutosDetails />} />
+          <Route path="/Produtos/detalhes/produtos/:id" element={<ProdutosDetails />} />
+          <Route path="/Produtos/detalhes/clientes/:id" element={<ClienteDetalhes/>} />
                   
         </Routes>
       </BrowserRouter>

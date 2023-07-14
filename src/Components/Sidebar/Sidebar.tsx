@@ -4,14 +4,18 @@ import ChartsLine from "../../assets/Icons/chart-line.svg";
 import ChartsPie from "../../assets/Icons/pie-two.svg";
 import Mekeups from "../../assets/Icons/facial-cleanser.svg";
 import Saly from "../../assets/ImgSupport/Saly.png";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
     <S.CardBoxGeneral>
+      <Link to={"/Dashboard"}>
       <S.Logo src={Logo} alt="" />
+      </Link>
+  
 
       <S.DivGeneralIcons>
-        <S.StyledLink to="/Dashbord">
+        <S.StyledLink to="/Dashboard">
           <S.BtnDashbord>
             <img src={ChartsPie} alt="" />
             Dashbord

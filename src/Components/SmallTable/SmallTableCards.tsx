@@ -1,4 +1,4 @@
-import * as S from "./MiniTableCards.Style";
+import * as S from "./SmallTableCards.Style";
 
 type MiniTableProps = {
   dados: Array<{ nome: string; proximaCompra: string , id:string }>;

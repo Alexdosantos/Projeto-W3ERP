@@ -9,8 +9,8 @@ import { GetUser } from "../../Service/GetApi/GetUser";
 interface IItem {
   nome: string;
   produtos: string[];
-  dados: Array<[]>;
-  id: number 
+  dados: []
+  id: number;
 }
 
 const Predicoes: React.FC = () => {
@@ -18,14 +18,13 @@ const Predicoes: React.FC = () => {
     "produtos",
     GetUser.predicaoList
   );
-  
 
   return (
     <Layout>
       <S.Container>
         <S.Title>Predições</S.Title>
 
-        <Search onKeyDown={''} placeholder="Pesquise uma palavra-chave" />
+        <Search onKeyDown={""} placeholder="Pesquise uma palavra-chave" />
       </S.Container>
       <S.DivCardInformation>
         {response &&

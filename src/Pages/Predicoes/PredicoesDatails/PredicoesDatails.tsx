@@ -7,18 +7,19 @@ import { BannerDatailsPredicoes } from "../../../Components/BannerInformation/Ba
 import TabelaProducts from "../../../Components/TableDasboard/TableProducts";
 import { GetUser } from "../../../Service/GetApi/GetUser";
 import { useQuery } from "react-query";
-import { ReactNode } from "react";
+
 
 export interface Root {
-  cpfcnpj: string;
-  email: string;
-  id: string;
-  nome: string;
-  telefone: string;
-  whatsapp: string;
-}
-
+  data:[
+    cpfcnpj: string,
+    email: string,
+    id: string | number,
+    nome: string,
+    telefone: string,
+    whatsapp: string,
+  ]
   
+}
 
 export const PredicoesDatails = () => {
   const { id } = useParams();
