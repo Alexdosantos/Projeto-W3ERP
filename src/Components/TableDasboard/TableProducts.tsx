@@ -1,12 +1,12 @@
 /* eslint-disable no-prototype-builtins */
 import { ReactNode } from "react";
+import { TdStatus } from "./TableProducts.style";
 import * as S from "./TableProducts.style";
 
 
 type TableProps = {
   nav: ReactNode;
   id: string;
- 
 
   dados: Array<{
     id: number | string;
@@ -34,6 +34,7 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
             <S.ThLeft>{id}</S.ThLeft>
 
             {!!dados?.[0]?.nome && <th>Produto</th>}
+
             {!!dados?.[0]?.classificacao && <th>Status</th>}
             {!!dados?.[0]?.cliente && <th>Cliente</th>}
             {!!dados?.[0]?.status && <th>Status</th>}
@@ -59,7 +60,11 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
                 <S.Td>{item.id}</S.Td>
 
                 {item.nome && <S.Td>{item.nome}</S.Td>}
-                {item.classificacao && <S.Td>{item.classificacao}</S.Td>}
+                {item.classificacao && (
+                  <TdStatus status={item.classificacao}>
+                    {item.classificacao}
+                  </TdStatus>
+                )}
                 {item.cliente && <S.Td>{item.cliente}</S.Td>}
 
                 {dados?.[0]?.hasOwnProperty("percentual") && (

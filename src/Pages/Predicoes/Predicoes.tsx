@@ -2,14 +2,16 @@ import * as React from "react";
 import * as S from "./Predicoes.Style";
 import { Layout } from "../../Components/Layout/Layout";
 import { Search } from "../../Components/Search/Search";
-import { CardsInformation } from "../../Components/PredicoesCards/CardsInformation";
+import {
+  CardsInformation,
+  TableData,
+} from "../../Components/PredicoesCards/CardsInformation";
 import { useQuery } from "react-query";
 import { GetUser } from "../../Service/GetApi/GetUser";
 
 interface IItem {
   nome: string;
-  produtos: string[];
-  dados: []
+  produtos: Array<TableData>;
   id: number;
 }
 
@@ -18,6 +20,7 @@ const Predicoes: React.FC = () => {
     "produtos",
     GetUser.predicaoList
   );
+  console.log(response);
 
   return (
     <Layout>
@@ -29,7 +32,6 @@ const Predicoes: React.FC = () => {
       <S.DivCardInformation>
         {response &&
           response.map((item: IItem, index: number) => (
-            // <Link to={`/Precicoes/${item.id}`}>
             <CardsInformation
               key={index}
               company={item.nome}

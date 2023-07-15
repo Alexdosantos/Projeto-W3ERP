@@ -1,7 +1,11 @@
+import { TableData } from "../PredicoesCards/CardsInformation";
 import * as S from "./SmallTableCards.Style";
 
+
 type MiniTableProps = {
-  dados: Array<{ nome: string; proximaCompra: string , id:string }>;
+  dados: Array<TableData>;
+  
+  
 };
 
 const MiniTableCards = ({ dados }: MiniTableProps) => {

@@ -6,11 +6,14 @@ import { GetUser } from "../../Service/GetApi/GetUser";
 import Filter from "../../assets/Icons/Filter.png";
 import TabelaProducts from "../../Components/TableDasboard/TableProducts";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Produtos = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const { data: List } = useQuery(["ProdutosList", searchTerm], () => GetUser.produtos(searchTerm));
+  const { data: List } = useQuery(["ProdutosList", searchTerm], () =>
+    GetUser.produtos(searchTerm)
+  );
 
   const handleSearch = (event) => {
     if (event.key === "Enter") {
@@ -39,7 +42,11 @@ const Produtos = () => {
               List.map((item) => ({
                 id: item.id,
                 classificacao: item.classificacao,
-                nome: item.nome,
+                nome: (
+                  <S.LinkProdutos to={`/Produtos/detalhes/produtos/${item.id}`}>
+                    {item.nome}
+                  </S.LinkProdutos>
+                ),
                 percentual: item.percentual,
               }))
             }

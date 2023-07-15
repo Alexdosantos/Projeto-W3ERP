@@ -26,7 +26,7 @@ const Login = () => {
       const data = await api.login(email, senha);
       setToken(data.token);
       console.log("Usuário conectado", data);
-      navigate("/Dashbord")
+      navigate("/Dashboard")
     }catch (error) {
       console.log('Usuário  não encontrado')
     }
