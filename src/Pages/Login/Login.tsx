@@ -5,12 +5,12 @@ import { UseApi } from "../../Service/PostApi/PostUser";
 
 import ImgLogin from "../../assets/ImgLogin/ImgLogin.jpeg";
 import * as S from "./Login.Style";
-import "../../teste.css";
+
 
 
 const Login = () => {
-  const [email, setEmail] = useState<string>();
-  const [senha, setSenha] = useState<string>();
+  const [email, setEmail] = useState<string>("");
+  const [senha, setSenha] = useState<string>("");
 
   const navigate = useNavigate();
   const api = UseApi()

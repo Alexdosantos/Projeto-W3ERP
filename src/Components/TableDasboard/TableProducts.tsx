@@ -36,7 +36,6 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
 
             {!!dados?.[0]?.classificacao && <S.ThStatus>Status</S.ThStatus>}
             {!!dados?.[0]?.cliente && <S.ThCliente>Cliente</S.ThCliente>}
-            
 
             {dados?.[0]?.hasOwnProperty("percentual") && (
               <S.ThRight>Porcentagem</S.ThRight>
