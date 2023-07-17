@@ -20,10 +20,14 @@ export const Container = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: transparent; /* Cor do polegar da barra de rolagem */
   }
+  
+  
+  
 `;
 export const TableDashboard = styled.table`
   width: 100%;
   border-collapse: collapse;
+  
 `;
 
 export const DivThead = styled.thead`
@@ -39,9 +43,11 @@ export const DivThead = styled.thead`
   letter-spacing: 0.2px;
 
   color: #fff;
+  
+  
 `;
 export const Td = styled.td`
-  padding: 10px;
+  padding: 1%;
   text-align: center;
 
   color: #212121;
@@ -52,6 +58,11 @@ export const Td = styled.td`
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0.2px;
+
+  &:nth-child(2) { 
+    padding-left: 10%;
+    text-align: left;
+  }
   
 `;
 
@@ -66,11 +77,17 @@ export const TdStatus = styled.td<TdProps>`
   text-align: center;
   display: flex;
   flex-direction: column;
-  
+  padding: 0 0 0 1%
+  width: 10%;
+  border-radius: 5px;
 
-  width: 60%;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  letter-spacing: 0.2px;
   
-  border-radius: 7px;
   background-color: ${(props) => {
     switch (props.status) {
       case "EM_ALTA":
@@ -97,19 +114,38 @@ export const TdStatus = styled.td<TdProps>`
     }
   }};
 
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%; /* 24px */
-  letter-spacing: 0.2px;
+  
   
 `;
 
 export const ThLeft = styled.th`
   border-top-left-radius: 10px;
   
+  
 `;
 export const ThRight = styled.th`
+  &:nth-child(2) { 
+    padding-left: 10%;
+    text-align: left;
+  }
+  
+`;
+
+export const ThRight1 = styled.th`
   border-top-right-radius: 10px;
+  
+`;
+
+export const ThProdutos = styled.th`
+  padding-right: 39%;
+  
+`;
+export const ThCliente = styled.th`
+  padding-right: 43%;
+  
+`;
+export const ThStatus = styled.th`
+  padding-left: -20%;
+ 
+  
 `;

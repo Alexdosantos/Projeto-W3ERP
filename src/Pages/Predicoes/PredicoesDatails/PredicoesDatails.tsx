@@ -9,21 +9,10 @@ import { GetUser } from "../../../Service/GetApi/GetUser";
 import { useQuery } from "react-query";
 
 
-export interface Root {
-  data:[
-    cpfcnpj: string,
-    email: string,
-    id: string | number,
-    nome: string,
-    telefone: string,
-    whatsapp: string,
-  ]
-  
-}
 
 export const PredicoesDatails = () => {
   const { id } = useParams();
-  const { data: historico } = useQuery<Root[]>(["predicaoHistorico", id], () =>
+  const { data: historico } = useQuery(["predicaoHistorico", id], () =>
     GetUser.predicaoHistorico(id)
   );
   const { data: esgotado } = useQuery(["predicaoEsgotado", id], () =>
@@ -33,6 +22,8 @@ export const PredicoesDatails = () => {
     GetUser.clienteId(id)
   );
   console.log(clienteId);
+  console.log(historico );
+  console.log(esgotado );
 
   return (
     <>
@@ -53,18 +44,8 @@ export const PredicoesDatails = () => {
           email={clienteId?.email}
         />
         <S.DivTable>
-          <TabelaProducts
-            nav="Histórico"
-            id="ID"
-            percentual="Percentual"
-            dados={historico}
-          />
-          <TabelaProducts
-            nav="Histórico"
-            id="ID"
-            percentual="Percentual"
-            dados={esgotado}
-          />
+          <TabelaProducts nav="Histórico" id="ID" dados={historico} />
+          <TabelaProducts nav="Histórico" id="ID" dados={esgotado} />
         </S.DivTable>
       </Layout>
     </>

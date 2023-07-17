@@ -6,7 +6,7 @@ import { GetUser } from "../../Service/GetApi/GetUser";
 import Filter from "../../assets/Icons/Filter.png";
 import TabelaProducts from "../../Components/TableDasboard/TableProducts";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+
 
 const Produtos = () => {
   const [searchTerm, setSearchTerm] = useState("");

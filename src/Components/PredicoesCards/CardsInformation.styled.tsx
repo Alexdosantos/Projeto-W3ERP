@@ -51,3 +51,7 @@ export const DivInformation = styled.div`
 `;
 
 
+export const Imgright = styled.img`
+  margin: 100% 0 0 0;
+
+`

@@ -175,7 +175,7 @@ export const GetUser = {
       throw error;
     }
   },
-  predicaoHistorico: async (id:number | string) => {
+  predicaoHistorico: async (id:number ) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/predicao/${id}/historico `, {

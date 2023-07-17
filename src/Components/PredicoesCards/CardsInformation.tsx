@@ -34,7 +34,7 @@ export const CardsInformation = ({
           </div>
         </S.DivUser>
         <Link to={`/Predicoes/${id}`}>
-          <img src={ImgRight} alt="" />
+          <S.Imgright src={ImgRight} alt="" />
         </Link>
       </S.Wapper>
       <S.DivInformation>

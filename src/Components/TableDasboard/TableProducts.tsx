@@ -3,10 +3,9 @@ import { ReactNode } from "react";
 import { TdStatus } from "./TableProducts.style";
 import * as S from "./TableProducts.style";
 
-
 type TableProps = {
   nav: ReactNode;
-  id: string;
+  id: number | string;
 
   dados: Array<{
     id: number | string;
@@ -33,23 +32,23 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
           <tr>
             <S.ThLeft>{id}</S.ThLeft>
 
-            {!!dados?.[0]?.nome && <th>Produto</th>}
+            {!!dados?.[0]?.nome && <S.ThProdutos>Produto</S.ThProdutos>}
 
-            {!!dados?.[0]?.classificacao && <th>Status</th>}
-            {!!dados?.[0]?.cliente && <th>Cliente</th>}
-            {!!dados?.[0]?.status && <th>Status</th>}
+            {!!dados?.[0]?.classificacao && <S.ThStatus>Status</S.ThStatus>}
+            {!!dados?.[0]?.cliente && <S.ThCliente>Cliente</S.ThCliente>}
+            
 
             {dados?.[0]?.hasOwnProperty("percentual") && (
               <S.ThRight>Porcentagem</S.ThRight>
             )}
-            {!!dados?.[0]?.imagemProdutos && <th></th>}
-            {!!dados?.[0]?.imagemClientes && <th></th>}
+            {!!dados?.[0]?.imagemProdutos && <S.ThRight1></S.ThRight1>}
+            {!!dados?.[0]?.imagemClientes && <S.ThRight1></S.ThRight1>}
             {!!dados?.[0]?.ultimaCompra && <th>Última Compra</th>}
             {dados?.[0]?.hasOwnProperty("quantidade") && (
               <S.ThRight>Qtd.</S.ThRight>
             )}
             {!!dados?.[0]?.qtd && <th>Qtd.</th>}
-            {!!dados?.[0]?.darbaixa && <S.ThRight>Dar Baixar</S.ThRight>}
+            {!!dados?.[0]?.darbaixa && <S.ThRight1>Dar Baixar</S.ThRight1>}
           </tr>
         </S.DivThead>
         <tbody>

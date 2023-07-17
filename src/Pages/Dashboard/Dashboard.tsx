@@ -6,13 +6,14 @@ import TabelaProducts from "../../Components/TableDasboard/TableProducts";
 import { NavTable } from "../../Components/NavTable/NavTable";
 import ImgProducts from "../../assets/Icons/IconBlue.png";
 import ImgClients from "../../assets/Icons/IconClients.png";
-import ImgNext from "../../assets/Icons/check-one.svg";
+import ImgNext from "../../assets/Icons/right.svg";
 import { GetUser } from "../../Service/GetApi/GetUser";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 
 type DashProps = {
   classificacao: string;
+  item: string;
 };
 
 const Dashboard = () => {
