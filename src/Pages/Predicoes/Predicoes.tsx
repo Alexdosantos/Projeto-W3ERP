@@ -16,18 +16,38 @@ interface IItem {
 }
 
 const Predicoes: React.FC = () => {
+  const [search, setSearch] = React.useState<string>("");
+
   const { data: response } = useQuery<IItem[]>(
-    "produtos",
-    GetUser.predicaoList
+    ["produtos", search],
+    () => GetUser.predicaoList(search)
   );
   console.log(response);
+
+  React.useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      GetUser.produtosList(search);
+    }, 400);
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [search]);
+
+  const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
+    if (event.key === "Enter") {
+      setSearch(event.currentTarget.value);
+    }
+  };
+
+  console.log(search);
 
   return (
     <Layout>
       <S.Container>
         <S.Title>Predições</S.Title>
-
-        <Search onKeyDown={""} placeholder="Pesquise uma palavra-chave" />
+        <Search
+          onKeyDown={handleSearch}
+          placeholder="Pesquise uma palavra-chave"
+        />
       </S.Container>
       <S.DivCardInformation>
         {response &&

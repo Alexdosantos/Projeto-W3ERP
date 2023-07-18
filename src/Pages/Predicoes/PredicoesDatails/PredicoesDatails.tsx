@@ -7,6 +7,8 @@ import { BannerDatailsPredicoes } from "../../../Components/BannerInformation/Ba
 import TabelaProducts from "../../../Components/TableDasboard/TableProducts";
 import { GetUser } from "../../../Service/GetApi/GetUser";
 import { useQuery } from "react-query";
+import { HeardHistorico } from "../../../Components/HeardHistorico/HeardHistorico";
+import { HeardProdutoEsgotado } from "../../../Components/HeardProdutoEsgotado/HeardProdutoEsgotado";
 
 
 
@@ -44,8 +46,8 @@ export const PredicoesDatails = () => {
           email={clienteId?.email}
         />
         <S.DivTable>
-          <TabelaProducts nav="Histórico" id="ID" dados={historico} />
-          <TabelaProducts nav="Histórico" id="ID" dados={esgotado} />
+          <TabelaProducts nav={<HeardHistorico/>} id="ID" dados={historico} />
+          <TabelaProducts nav={<HeardProdutoEsgotado/>} id="ID" dados={esgotado} />
         </S.DivTable>
       </Layout>
     </>

@@ -25,6 +25,8 @@ const Dashboard = () => {
   const { data: produtos } = useQuery("produtos", GetUser.produtos);
   const { data: clientes } = useQuery("clients", GetUser.cliente);
 
+console.log(produtos)
+
   // Lógica de mapeamento para a prop 'dados' dos componentes TabelaProducts
   const produtosData = exibirProdutosAlta
     ? produtos.filter(

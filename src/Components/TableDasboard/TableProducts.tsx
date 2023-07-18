@@ -33,7 +33,6 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
             <S.ThLeft>{id}</S.ThLeft>
 
             {!!dados?.[0]?.nome && <S.ThProdutos>Produto</S.ThProdutos>}
-
             {!!dados?.[0]?.classificacao && <S.ThStatus>Status</S.ThStatus>}
             {!!dados?.[0]?.cliente && <S.ThCliente>Cliente</S.ThCliente>}
 
@@ -56,7 +55,6 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
             dados.map((item) => (
               <tr key={item.id}>
                 <S.Td>{item.id}</S.Td>
-
                 {item.nome && <S.Td>{item.nome}</S.Td>}
                 {item.classificacao && (
                   <TdStatus status={item.classificacao}>
@@ -64,15 +62,12 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
                   </TdStatus>
                 )}
                 {item.cliente && <S.Td>{item.cliente}</S.Td>}
-
                 {dados?.[0]?.hasOwnProperty("percentual") && (
                   <S.Td>{item.percentual}%</S.Td>
                 )}
 
                 {item.imagemProdutos && <S.Td>{item.imagemProdutos}</S.Td>}
-
                 {item.imagemClientes && <S.Td>{item.imagemClientes}</S.Td>}
-
                 {item.ultimaCompra && <S.Td>{item.ultimaCompra}</S.Td>}
 
                 {dados?.[0]?.hasOwnProperty("quantidade") && (

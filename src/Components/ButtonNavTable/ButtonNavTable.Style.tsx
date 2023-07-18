@@ -20,13 +20,9 @@ export const BtnNavTable = styled.button<ButtonProps>`
   line-height: 140%;
   letter-spacing: 0.2px;
 
-  background-color: ${(props) => {
-    if (props.active) {
-      return props.buttontype === "alta" ? "#00ff00" : "#ff0000";
-    } else {
-      return "#ffffff";
-    }
-  }};
+  background-color: ${(props) =>
+    props.active ? (props.buttontype === "EM_ALTA" ? "#00ff00" : "#ff0000") : "#ffffff"};
 
   color: ${(props) => (props.active ? "#ffffff" : "#000000")};
-`;
+
+`

@@ -1,3 +1,4 @@
+import * as React from "react";
 import * as S from "./Products.Style";
 import { Layout } from "../../Components/Layout/Layout";
 import { Search } from "../../Components/Search/Search";
@@ -5,22 +6,30 @@ import { useQuery } from "react-query";
 import { GetUser } from "../../Service/GetApi/GetUser";
 import Filter from "../../assets/Icons/Filter.png";
 import TabelaProducts from "../../Components/TableDasboard/TableProducts";
-import { useState } from "react";
-
+import { useEffect } from "react";
 
 const Produtos = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = React.useState<string>("");
+ 
 
-  const { data: List } = useQuery(["ProdutosList", searchTerm], () =>
-    GetUser.produtos(searchTerm)
+  const { data: List } = useQuery(["ProdutoList", searchTerm], () =>
+    GetUser.produtosList(searchTerm)
   );
+
+  useEffect(() => {
+    const delayDebounceFn = setTimeout(() => {
+      GetUser.produtosList(searchTerm);
+    }, 400); 
+
+    return () => clearTimeout(delayDebounceFn);
+  }, [searchTerm]);
 
   const handleSearch = (event) => {
     if (event.key === "Enter") {
       setSearchTerm(event.target.value);
     }
   };
-
+console.log(searchTerm)
   return (
     <>
       <Layout>
@@ -36,7 +45,6 @@ const Produtos = () => {
           <TabelaProducts
             nav=""
             id="ID"
-            percentual="Percentual"
             dados={
               List &&
               List.map((item) => ({

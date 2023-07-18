@@ -37,14 +37,14 @@ export const NavTable = ({
       </S.ContainerOne>
       <div>
         <ButtonNavTable
-          title="Em Alta"
-          buttonType="alta"
+          title="EM ALTA"
+          buttonType="EM_ALTA"
           active={isAltaActive}
           onClick={handleAltaClick}
         />
         <ButtonNavTable
-          title="Em Baixa"
-          buttonType="baixa"
+          title="EM BAIXA"
+          buttonType="EM_BAIXA"
           active={isBaixaActive}
           onClick={handleBaixaClick}
         />

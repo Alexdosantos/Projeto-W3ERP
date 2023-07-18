@@ -1,5 +1,6 @@
 import * as S from "./ButtonNavTable.Style";
 
+
 type ButtonNavTableProps = {
   onClick: () => void;
   title: string;

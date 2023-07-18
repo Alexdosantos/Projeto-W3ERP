@@ -1,9 +1,9 @@
-import { SmallCardProcentagem } from "../../SmallCardPorcentagem/SmallCardProcentagem";
+
 import * as S from "./SmallCardWhite.Style";
 type SmallCardsWhiteProps = {
   title: string;
   text: number;
-  porcentagem: string;
+  porcentagem: string |number;
 };
 
 export const SmallCardWhite = ({

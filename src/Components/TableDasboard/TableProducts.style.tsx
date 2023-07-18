@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 700px;
-  
+
   border-radius: 24px;
   box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
   overflow: auto;
@@ -20,14 +20,10 @@ export const Container = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: transparent; /* Cor do polegar da barra de rolagem */
   }
-  
-  
-  
 `;
 export const TableDashboard = styled.table`
   width: 100%;
   border-collapse: collapse;
-  
 `;
 
 export const DivThead = styled.thead`
@@ -43,8 +39,6 @@ export const DivThead = styled.thead`
   letter-spacing: 0.2px;
 
   color: #fff;
-  
-  
 `;
 export const Td = styled.td`
   padding: 1%;
@@ -59,11 +53,10 @@ export const Td = styled.td`
   line-height: 150%;
   letter-spacing: 0.2px;
 
-  &:nth-child(2) { 
+  &:nth-child(2) {
     padding-left: 10%;
     text-align: left;
   }
-  
 `;
 
 type Status = "EM_ALTA" | "EM_BAIXA" | "NEUTRO" | string;
@@ -73,12 +66,10 @@ type TdProps = {
 };
 
 export const TdStatus = styled.td<TdProps>`
-  
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 0 0 0 1%
-  width: 10%;
+  padding: 0 0 0 1%;
   border-radius: 5px;
 
   font-family: Poppins;
@@ -87,7 +78,7 @@ export const TdStatus = styled.td<TdProps>`
   font-weight: 400;
   line-height: 150%; /* 24px */
   letter-spacing: 0.2px;
-  
+
   background-color: ${(props) => {
     switch (props.status) {
       case "EM_ALTA":
@@ -113,39 +104,28 @@ export const TdStatus = styled.td<TdProps>`
         return "black";
     }
   }};
-
-  
-  
 `;
 
 export const ThLeft = styled.th`
   border-top-left-radius: 10px;
-  
-  
 `;
 export const ThRight = styled.th`
-  &:nth-child(2) { 
+  &:nth-child(2) {
     padding-left: 10%;
     text-align: left;
   }
-  
 `;
 
 export const ThRight1 = styled.th`
   border-top-right-radius: 10px;
-  
 `;
 
 export const ThProdutos = styled.th`
   padding-right: 39%;
-  
 `;
 export const ThCliente = styled.th`
   padding-right: 43%;
-  
 `;
 export const ThStatus = styled.th`
   padding-left: -20%;
- 
-  
 `;

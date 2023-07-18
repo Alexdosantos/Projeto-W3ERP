@@ -30,6 +30,23 @@ export const GetUser = {
       throw error;
     }
   },
+  produtosList: async (query:string) => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/app/produto", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }, params: {
+          query
+        }
+      });
+
+      return response.data.content;
+    } catch (error) {
+      console.error("Erro ao obter os produtos:", error);
+      throw error;
+    }
+  },
   produtosResumo: async (id:number) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
@@ -161,13 +178,16 @@ export const GetUser = {
       throw error;
     }
   },
-  predicaoList: async () => {
+  predicaoList: async (query:string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get("/app/predicao", {
         headers: {
           Authorization: `Bearer ${token}`,
-        },
+        }, params: {
+          query
+        }
+        
       });
       return response.data.content;
     } catch (error) {
