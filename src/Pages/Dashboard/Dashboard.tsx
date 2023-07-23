@@ -13,7 +13,9 @@ import { Link } from "react-router-dom";
 
 type DashProps = {
   classificacao: string;
-  item: string;
+  id: number;
+  nome: string;
+  percentual: number;
 };
 
 const Dashboard = () => {
@@ -25,7 +27,7 @@ const Dashboard = () => {
   const { data: produtos } = useQuery("produtos", GetUser.produtos);
   const { data: clientes } = useQuery("clients", GetUser.cliente);
 
-console.log(produtos)
+  console.log(produtos);
 
   // Lógica de mapeamento para a prop 'dados' dos componentes TabelaProducts
   const produtosData = exibirProdutosAlta
@@ -70,19 +72,20 @@ console.log(produtos)
               />
             }
             id="ID"
-            
             dados={
               produtosData &&
-              produtosData.map((item) => ({
-                id: item.id,
-                nome: item.nome,
-                imagemProdutos: (
-                  <Link to={`/Produtos/detalhes/produtos/${item.id}`}>
-                    <img src={ImgNext} alt="next" />
-                  </Link>
-                ),
-                percentual: item.percentual,
-              }))
+              produtosData.map(
+                (item: { id: number; nome: string; percentual: number }) => ({
+                  id: item.id,
+                  nome: item.nome,
+                  imagemProdutos: (
+                    <Link to={`/Produtos/detalhes/produtos/${item.id}`}>
+                      <img src={ImgNext} alt="next" />
+                    </Link>
+                  ),
+                  percentual: item.percentual,
+                })
+              )
             }
           />
 
@@ -102,21 +105,20 @@ console.log(produtos)
               />
             }
             id="ID"
-          
             dados={
               clientesData &&
-              clientesData.map((item) => ({
-                id: item.id,
-                cliente: item.nome,
-                imagemClientes: (
-                  //ALEX ,ALEX ,ALEX ,ALEX
-                  //RELIZAR A TROCA PARA ROTA DE CLIENTES
-                  <Link to={`/Produtos/detalhes/clientes/${item.id}`}>
-                    <img src={ImgNext} alt="next" />
-                  </Link>
-                ),
-                percentual: item.percentual,
-              }))
+              clientesData.map(
+                (item: { id: number; nome: string; percentual: number }) => ({
+                  id: item.id,
+                  cliente: item.nome,
+                  imagemClientes: (
+                    <Link to={`/Produtos/detalhes/clientes/${item.id}`}>
+                      <img src={ImgNext} alt="next" />
+                    </Link>
+                  ),
+                  percentual: item.percentual,
+                })
+              )
             }
           />
         </S.DivTable>

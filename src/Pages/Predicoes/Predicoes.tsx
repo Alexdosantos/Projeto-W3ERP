@@ -18,27 +18,25 @@ interface IItem {
 const Predicoes: React.FC = () => {
   const [search, setSearch] = React.useState<string>("");
 
-  const { data: response } = useQuery<IItem[]>(
-    ["produtos", search],
-    () => GetUser.predicaoList(search)
+  const { data: response } = useQuery<IItem[]>(["produtos", search], () =>
+    GetUser.predicaoList(search)
   );
-  console.log(response);
 
   React.useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
-      GetUser.produtosList(search);
+      GetUser.productSearch(search);
     }, 400);
 
     return () => clearTimeout(delayDebounceFn);
   }, [search]);
 
-  const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (event) => {
+  const handleSearch: React.KeyboardEventHandler<HTMLInputElement> = (
+    event
+  ) => {
     if (event.key === "Enter") {
       setSearch(event.currentTarget.value);
     }
   };
-
-  console.log(search);
 
   return (
     <Layout>
@@ -58,7 +56,6 @@ const Predicoes: React.FC = () => {
               dados={item.produtos}
               id={item.id}
             />
-            // </Link>
           ))}
       </S.DivCardInformation>
     </Layout>

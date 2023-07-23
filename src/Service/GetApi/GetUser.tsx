@@ -30,15 +30,55 @@ export const GetUser = {
       throw error;
     }
   },
-  produtosList: async (query:string) => {
+  produtosList: async (query: string, page: number, size: number) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get("/app/produto", {
         headers: {
           Authorization: `Bearer ${token}`,
-        }, params: {
-          query
-        }
+        },
+        params: {
+          query,
+          page,
+          size,
+        },
+      });
+
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao obter os produtos:", error);
+      throw error;
+    }
+  },
+  productSearch: async (query: string) => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/app/produto", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          query,
+        },
+      });
+
+      return response.data;
+    } catch (error) {
+      console.error("Erro ao obter os produtos:", error);
+      throw error;
+    }
+  },
+  produtosPage: async (page: number, size: number) => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get("/app/produto/", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          page,
+          size,
+        },
       });
 
       return response.data.content;
@@ -47,13 +87,12 @@ export const GetUser = {
       throw error;
     }
   },
-  produtosResumo: async (id:number) => {
+  produtosResumo: async (id: number) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/produto/${id}/resumo `, {
         headers: {
           Authorization: `Bearer ${token}`,
-          
         },
       });
       return response.data;
@@ -62,43 +101,46 @@ export const GetUser = {
       throw error;
     }
   },
-  produtosEmAlta: async (id:number) => {
+  produtosEmAlta: async (id: number) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
-      const response = await api.get(`/app/cliente/${id}/produtos?classificacao=EM_ALTA `, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          
-        },
-      });
+      const response = await api.get(
+        `/app/cliente/${id}/produtos?classificacao=EM_ALTA `,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       return response.data;
     } catch (error) {
       console.error("Erro ao obter o predição list:", error);
       throw error;
     }
   },
-  produtosEmABaixa: async (id:number) => {
+  produtosEmABaixa: async (id: number) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
-      const response = await api.get(`/app/cliente/${id}/produtos?classificacao=EM_BAIXA `, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          
-        },
-      });
+      const response = await api.get(
+        `/app/cliente/${id}/produtos?classificacao=EM_BAIXA `,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       return response.data;
     } catch (error) {
       console.error("Erro ao obter o predição list:", error);
       throw error;
     }
   },
-  predicaoEsgotados: async (id:number) => {
+  predicaoEsgotados: async (id: number) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/predicao/${id}/esgotando `, {
         headers: {
           Authorization: `Bearer ${token}`,
-          
         },
       });
       return response.data.content;
@@ -107,7 +149,7 @@ export const GetUser = {
       throw error;
     }
   },
-  
+
   cliente: async () => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
@@ -122,7 +164,7 @@ export const GetUser = {
       throw error;
     }
   },
-  clienteId: async (id:number) => {
+  clienteId: async (id: number) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/cliente/${id}`, {
@@ -136,28 +178,34 @@ export const GetUser = {
       throw error;
     }
   },
-  clienteEmBaixa: async (id:string) => {
+  clienteEmBaixa: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
-      const response = await api.get(`/app/produto/${id}/clientes?classificacao=EM_BAIXA`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await api.get(
+        `/app/produto/${id}/clientes?classificacao=EM_BAIXA`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       return response.data;
     } catch (error) {
       console.error("Erro ao obter os clientes:", error);
       throw error;
     }
   },
-  clienteEmAlta: async (id:string) => {
+  clienteEmAlta: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
-      const response = await api.get(`/app/produto/${id}/clientes?classificacao=EM_ALTA`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await api.get(
+        `/app/produto/${id}/clientes?classificacao=EM_ALTA`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       return response.data;
     } catch (error) {
       console.error("Erro ao obter os clientes:", error);
@@ -178,30 +226,15 @@ export const GetUser = {
       throw error;
     }
   },
-  predicaoList: async (query:string) => {
+  predicaoList: async (query: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get("/app/predicao", {
         headers: {
           Authorization: `Bearer ${token}`,
-        }, params: {
-          query
-        }
-        
-      });
-      return response.data.content;
-    } catch (error) {
-      console.error("Erro ao obter o predição list:", error);
-      throw error;
-    }
-  },
-  predicaoHistorico: async (id:number ) => {
-    try {
-      const token = localStorage.getItem("AUTH_TOKEN") || "";
-      const response = await api.get(`/app/predicao/${id}/historico `, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          
+        },
+        params: {
+          query,
         },
       });
       return response.data.content;
@@ -210,6 +243,18 @@ export const GetUser = {
       throw error;
     }
   },
-  
-  
+  predicaoHistorico: async (id: number) => {
+    try {
+      const token = localStorage.getItem("AUTH_TOKEN") || "";
+      const response = await api.get(`/app/predicao/${id}/historico `, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data.content;
+    } catch (error) {
+      console.error("Erro ao obter o predição list:", error);
+      throw error;
+    }
+  },
 };

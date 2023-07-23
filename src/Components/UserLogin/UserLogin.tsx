@@ -3,10 +3,12 @@ import ImgDropdown from "../../assets/Login/chevrondown.svg";
 import * as S from "./UserLogin.style";
 import { useEffect, useState } from "react";
 import { GetUser } from "../../Service/GetApi/GetUser";
+import { ModalLogout } from "../ModalLogout/ModalLogout";
 
 export const UserLogin = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
+  const [openModal, setOpenModal] = useState(false);
 
 
 
@@ -37,10 +39,11 @@ export const UserLogin = () => {
           <S.TitleEmail>{email}</S.TitleEmail>
         </div>
         <div>
-          <S.BtnDropdown>
+          <S.BtnDropdown onClick={() => setOpenModal(!openModal)}>
             <img src={ImgDropdown} alt="" />
           </S.BtnDropdown>
         </div>
+        <ModalLogout isOpen={openModal}/>
       </S.Container>
     </>
   );

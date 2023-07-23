@@ -62,7 +62,7 @@ export const Td = styled.td`
 type Status = "EM_ALTA" | "EM_BAIXA" | "NEUTRO" | string;
 
 type TdProps = {
-  status: Status;
+  $status: Status;
 };
 
 export const TdStatus = styled.td<TdProps>`
@@ -80,7 +80,7 @@ export const TdStatus = styled.td<TdProps>`
   letter-spacing: 0.2px;
 
   background-color: ${(props) => {
-    switch (props.status) {
+    switch (props.$status) {
       case "EM_ALTA":
         return "#D9FEE6";
       case "EM_BAIXA":
@@ -93,7 +93,7 @@ export const TdStatus = styled.td<TdProps>`
   }};
 
   color: ${(props) => {
-    switch (props.status) {
+    switch (props.$status) {
       case "EM_ALTA":
         return "#00C247"; // Texto branco para EM_ALTA
       case "EM_BAIXA":

@@ -9,17 +9,18 @@ type TableProps = {
 
   dados: Array<{
     id: number | string;
-    cliente?: string | number;
-    nome?: string;
-    percentual?: string | number;
-    ultimaCompra?: string | number;
-    qtd?: string | number;
-    darbaixa?: string | number;
-    status?: string | number;
-    classificacao?: string;
-    quantidade?: number;
-    imagemProdutos?: string;
-    imagemClientes?: string;
+    cliente: string | number;
+    nome: string;
+    percentual: string | number;
+    ultimaCompra: string | number;
+    qtd: string | number;
+    darbaixa: string | number;
+    status: string | number;
+    classificacao: string;
+    quantidade: number;
+    imagemProdutos: string;
+    imagemClientes: string;
+    imagemBaixa: string;
   }>;
 };
 
@@ -41,10 +42,12 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
             )}
             {!!dados?.[0]?.imagemProdutos && <S.ThRight1></S.ThRight1>}
             {!!dados?.[0]?.imagemClientes && <S.ThRight1></S.ThRight1>}
+
             {!!dados?.[0]?.ultimaCompra && <th>Última Compra</th>}
             {dados?.[0]?.hasOwnProperty("quantidade") && (
               <S.ThRight>Qtd.</S.ThRight>
             )}
+            {!!dados?.[0]?.imagemBaixa && <S.ThRight1>Dar baixa</S.ThRight1>}
             {!!dados?.[0]?.qtd && <th>Qtd.</th>}
             {!!dados?.[0]?.darbaixa && <S.ThRight1>Dar Baixar</S.ThRight1>}
           </tr>
@@ -57,7 +60,7 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
                 <S.Td>{item.id}</S.Td>
                 {item.nome && <S.Td>{item.nome}</S.Td>}
                 {item.classificacao && (
-                  <TdStatus status={item.classificacao}>
+                  <TdStatus $status={item.classificacao}>
                     {item.classificacao}
                   </TdStatus>
                 )}
@@ -67,12 +70,14 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
                 )}
 
                 {item.imagemProdutos && <S.Td>{item.imagemProdutos}</S.Td>}
+
                 {item.imagemClientes && <S.Td>{item.imagemClientes}</S.Td>}
                 {item.ultimaCompra && <S.Td>{item.ultimaCompra}</S.Td>}
 
                 {dados?.[0]?.hasOwnProperty("quantidade") && (
                   <S.Td>{item.quantidade}</S.Td>
                 )}
+                {item.imagemBaixa && <S.Td>{item.imagemBaixa}</S.Td>}
                 {item.qtd && <S.Td>{item.qtd}</S.Td>}
                 {item.darbaixa && <S.Td>{item.darbaixa}</S.Td>}
               </tr>
