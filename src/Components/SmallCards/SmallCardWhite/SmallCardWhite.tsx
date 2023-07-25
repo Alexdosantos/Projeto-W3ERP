@@ -3,7 +3,7 @@ import * as S from "./SmallCardWhite.Style";
 type SmallCardsWhiteProps = {
   title: string;
   text: number;
-  porcentagem: string |number;
+  porcentagem?: React.ReactNode;
 };
 
 export const SmallCardWhite = ({

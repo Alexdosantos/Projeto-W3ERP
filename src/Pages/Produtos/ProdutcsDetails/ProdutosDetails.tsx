@@ -14,19 +14,23 @@ import ImgCAlta from "../../../assets/Icons/ClienteEmAlta.png";
 import * as S from "./ProdutosDetails.Style";
 import { HeardClienteTable } from "../../../Components/HeardClienteTable/HeardClienteTable";
 
+
+
+
+
 export const ProdutosDetails = () => {
   const { id } = useParams();
   const { data: produtosResumo } = useQuery(["produtosResumo", id], () =>
-    GetUser.produtosResumo(id)
+    GetUser.produtosResumo(id!)
   );
 
   const { data: clienteEmBaixa } = useQuery(["clienteEmBaixa", id], () =>
-    GetUser.clienteEmBaixa(id)
+    GetUser.clienteEmBaixa(id!)
   );
   console.log(clienteEmBaixa);
 
   const { data: clienteEmAlta } = useQuery(["clienteEmAlta", id], () =>
-    GetUser.clienteEmAlta(id)
+    GetUser.clienteEmAlta(id!)
   );
 
   return (
@@ -56,17 +60,17 @@ export const ProdutosDetails = () => {
           <SmallCardWhite
             title="Últimos 60 dias "
             text={produtosResumo?.ultimos60Dias}
-            porcentagem=""
+            
           />
           <SmallCardWhite
             title="Últimos 90 dias "
             text={produtosResumo?.ultimos90Dias}
-            porcentagem=""
+            
           />
           <SmallCardWhite
             title="Últimos 120 dias "
             text={produtosResumo?.ultimos120Dias}
-            porcentagem=""
+            
           />
         </S.Wapper>
 

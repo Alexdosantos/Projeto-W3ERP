@@ -5,15 +5,22 @@ import { useEffect, useState } from "react";
 import { GetUser } from "../../Service/GetApi/GetUser";
 import { ModalLogout } from "../ModalLogout/ModalLogout";
 
+interface UserData {
+  nome: string;
+  email: string;
+  
+}
+
 export const UserLogin = () => {
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [openModal, setOpenModal] = useState(false);
+  const [nome, setNome] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [openModal, setOpenModal] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchGetUser = async () => {
       try {
-        const data = await GetUser.userName();
+        const data: UserData = await GetUser.userName();
+        console.log(data);
         setNome(data.nome);
         setEmail(data.email);
       } catch (err) {

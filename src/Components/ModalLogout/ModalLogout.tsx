@@ -4,7 +4,7 @@ import { useState } from "react";
 
 type ModalLogoutProps = {
   isOpen: boolean;
-  token: string;
+  
 };
 
 export const ModalLogout = ({ isOpen }: ModalLogoutProps) => {

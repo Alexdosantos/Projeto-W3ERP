@@ -26,7 +26,7 @@ const Grafics = ({data}:GraficProps) => {
         dataKey="value"
       >
         {data && data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          <Cell key={`cell-${entry}`} fill={COLORS[index % COLORS.length]} />
         ))}
 
         <Label

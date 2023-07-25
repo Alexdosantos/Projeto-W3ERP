@@ -1,7 +1,8 @@
 import { api } from "../../Hooks/UseApi";
 
+
 export const GetUser = {
-  userName: async ():Promise<void> => {
+  userName: async () => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get("/central/usuario/me", {
@@ -87,7 +88,7 @@ export const GetUser = {
       throw error;
     }
   },
-  produtosResumo: async (id: number) => {
+  produtosResumo: async (id: string ) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/produto/${id}/resumo `, {
@@ -101,7 +102,7 @@ export const GetUser = {
       throw error;
     }
   },
-  produtosEmAlta: async (id: number) => {
+  produtosEmAlta: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(
@@ -118,7 +119,7 @@ export const GetUser = {
       throw error;
     }
   },
-  produtosEmABaixa: async (id: number) => {
+  produtosEmABaixa: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(
@@ -164,7 +165,7 @@ export const GetUser = {
       throw error;
     }
   },
-  clienteId: async (id: number) => {
+  clienteId: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/cliente/${id}`, {
@@ -178,7 +179,7 @@ export const GetUser = {
       throw error;
     }
   },
-  clienteEmBaixa: async (id: string) => {
+  clienteEmBaixa: async (id:string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(
@@ -243,7 +244,7 @@ export const GetUser = {
       throw error;
     }
   },
-  predicaoHistorico: async (id: number) => {
+  predicaoHistorico: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/predicao/${id}/historico `, {

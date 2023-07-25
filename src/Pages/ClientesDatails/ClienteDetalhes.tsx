@@ -12,21 +12,21 @@ import TabelaProducts from '../../Components/TableDasboard/TableProducts'
 
 export const ClienteDetalhes = () => {
   const { id } = useParams();
-  const { data: produtosResumo } = useQuery<Root>(["produtosResumo", id], () =>
-    GetUser.produtosResumo(id)
+  const { data: produtosResumo } = useQuery(["produtosResumo", id], () =>
+    GetUser.produtosResumo(id!)
   );
   console.log(produtosResumo);
-  const { data: produtosEmBaixa } = useQuery<Root>(["produtosEmBaixa", id], () =>
-    GetUser.produtosEmABaixa(id)
+  const { data: produtosEmBaixa } = useQuery(["produtosEmBaixa", id], () =>
+    GetUser.produtosEmABaixa(id!)
   );
   console.log(produtosEmBaixa);
-  const { data: produtosEmAlta} = useQuery<Root>(["produtosEmAlta", id], () =>
-    GetUser.produtosEmAlta(id)
+  const { data: produtosEmAlta} = useQuery(["produtosEmAlta", id], () =>
+    GetUser.produtosEmAlta(id!)
   );
   console.log(produtosEmAlta);
   
-  const { data: clienteId} = useQuery<Root>(["clienteId", id], () =>
-    GetUser.clienteId(id)
+  const { data: clienteId} = useQuery(["clienteId", id], () =>
+    GetUser.clienteId(id!)
   );
   console.log(clienteId);
   return (
