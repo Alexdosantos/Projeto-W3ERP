@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
-
 export const BtnAngleDoubleLeft = styled.button`
   width: 20%;
   height: 70%;
@@ -67,7 +65,7 @@ export const DivPages = styled.div`
 `;
 export const DivButton = styled.div`
   display: flex;
-  gap: 1%;
+  gap: 20%;
   margin: 1% 8% 0 0;
 `;
 export const TextPages = styled.h1`
@@ -82,25 +80,25 @@ export const TextPages = styled.h1`
   letter-spacing: 0.2px;
 `;
 export const BtnPrev = styled.button`
-  padding: 4%;
-  margin: 2% 1% 0 0;
+  width: 150%;
+  height: 30px;
+  padding: 5%;
 
   color: #fff;
   border-radius: 5px;
 
   font-family: Poppins;
   font-weight: 500;
-  background: transparent;
+
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
+
   background: #001c98;
   border: none;
 `;
 export const TextNumber = styled.p`
   text-align: center;
-  margin: 3% 0 0 0;
+  margin: 1% 0 0 0;
 
   font-family: Poppins;
   font-weight: 700;
@@ -108,19 +106,19 @@ export const TextNumber = styled.p`
   border-radius: 5px 5px 5px 5px;
 `;
 export const BtnNext = styled.button`
-  padding: 4%;
-  margin: 2% 0 0 0;
+  width: 100%;
+  height: 30px;
+  padding: 5%;
 
   color: #fff;
   border-radius: 5px;
 
   font-family: Poppins;
   font-weight: 500;
-  background: transparent;
+
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
+
   background: #001c98;
   border: none;
 `;

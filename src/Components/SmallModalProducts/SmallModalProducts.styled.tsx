@@ -66,7 +66,7 @@ export const Checkboxt = styled.input`
   height: 24px;
   text-decoration-color: #007bff;
   background: #007bff;
-  background-color: #007bff; 
+  background-color: #007bff;
   border: 2px solid #007bff;
   color: #004ce8;
   border: #004ce8;
@@ -89,7 +89,7 @@ export const TextEmAlta = styled.h4`
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; 
+  line-height: 150%;
   letter-spacing: 0.2px;
 `;
 export const TextBaixa = styled.h4`
@@ -99,7 +99,7 @@ export const TextBaixa = styled.h4`
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; 
+  line-height: 150%;
   letter-spacing: 0.2px;
 `;
 export const Button = styled.button`

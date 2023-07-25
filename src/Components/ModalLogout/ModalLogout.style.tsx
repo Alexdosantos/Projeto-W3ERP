@@ -8,7 +8,7 @@ export const Container = styled.div`
   right: 3%;
   width: 10%;
   height: 12%;
- 
+
   background-color: #fff;
   box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
   border-radius: 10px;
@@ -16,25 +16,24 @@ export const Container = styled.div`
   z-index: 1;
 `;
 export const Wapper = styled.div`
-display: flex;
-flex-direction: column;
-gap: 15px;
- margin: 15% 0 0 10%;
- 
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 15% 0 0 10%;
 `;
 export const DivConfiguration = styled.div`
-display: flex;
-gap: 5%;
-`
+  display: flex;
+  gap: 5%;
+`;
 export const DivExit = styled.div`
-display: flex;
-gap: 5%;
-`
+  display: flex;
+  gap: 5%;
+`;
 export const Division = styled.div`
-width: 90%;
-height: 1px;
-background: #ccc8c8;
-`
+  width: 90%;
+  height: 1px;
+  background: #ccc8c8;
+`;
 
 export const IconConfiguration = styled(BsGear)`
   width: 14%;
@@ -69,4 +68,18 @@ export const TextExit = styled(Link)`
   line-height: 150%;
   letter-spacing: 0.2px;
   text-decoration: none;
+`;
+export const BtnExit = styled.button`
+  color: #757575;
+
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 `;

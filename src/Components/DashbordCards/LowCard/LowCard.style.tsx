@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 20%;
+  /* width: 20%;
 
   border-radius: 24px;
-  background: #02156a;
+  background: #02156a; */
 `;
 export const Wapper = styled.div`
   display: flex;

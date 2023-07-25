@@ -28,7 +28,7 @@ const TabelaProducts = ({ nav, id, dados }: TableProps) => {
   return (
     <S.Container>
       <h2>{nav}</h2>
-      <S.TableDashboard>
+      <S.TableDashboard id="table-Information">
         <S.DivThead>
           <tr>
             <S.ThLeft>{id}</S.ThLeft>

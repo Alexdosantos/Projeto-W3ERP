@@ -13,30 +13,29 @@ export const Sidebar = () => {
       <S.Logo src={Logo} alt="" />
       </Link>
   
-
       <S.DivGeneralIcons>
         <S.StyledLink to="/Dashboard">
-          <S.BtnDashbord>
+          <S.BtnDashbord id="dashboard">
             <img src={ChartsPie} alt="" />
             Dashbord
           </S.BtnDashbord>
         </S.StyledLink>
 
         <S.StyledLink to={"/Predicoes"}>
-          <S.BtnPredicoes>
+          <S.BtnPredicoes  id="predicoes">
             <img src={ChartsLine} alt="" />
             Predições
           </S.BtnPredicoes>
         </S.StyledLink>
         <S.StyledLink to={"/Produtos"}>
-          <S.BtnProdutos>
+          <S.BtnProdutos id="produtos">
             <img src={Mekeups} alt="" />
             Produtos
           </S.BtnProdutos>
         </S.StyledLink>
       </S.DivGeneralIcons>
 
-      <S.DivSupport>
+      <S.DivSupport id="contact">
         <S.ImgSupport src={Saly} alt="" />
         <S.TextInformation>
           Precinsando de ajuda ou suporte em algo

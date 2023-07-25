@@ -17,12 +17,19 @@ export const Container1 = styled.div`
   justify-content: space-between;
   
 `;
+
 export const DivCardsInformation = styled.div`
     display: flex;
     gap: 4%;
     margin: 2% 0 0 2%;
 `
 
+export const DivCards = styled.div`
+  width: 20%;
+  margin-left: 15px;
+  border-radius: 24px;
+  background: #02156a;
+`;
 export const TextH4 = styled.h4`
   padding: 15% 0 0 50px;
 

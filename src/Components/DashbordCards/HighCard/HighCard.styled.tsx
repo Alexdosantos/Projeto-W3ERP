@@ -1,27 +1,24 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 20%;
+  /* width: 20%;
   margin-left: 15px;
- border-radius: 24px;
-  background: #02156a;
-  
- 
-
+  border-radius: 24px;
+  background: #02156a; */
 `;
 export const Wapper = styled.div`
   display: flex;
 `;
 export const DivGraphics = styled.div`
-  margin-top:5%;
-`
+  margin-top: 5%;
+`;
 export const Container1 = styled.div`
- display: flex;
- flex-direction: column;
- gap:5%;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+`;
 export const TextP = styled.p`
-display: flex;
+  display: flex;
 
   margin: 10% 0;
   gap: -1%;
@@ -39,7 +36,7 @@ export const DivNumber = styled.div`
   gap: 10%;
 `;
 export const Number = styled.h4`
-margin-top: -10%;
+  margin-top: -10%;
   color: #fff;
 
   font-size: 200%;
@@ -53,11 +50,10 @@ export const Porcentagem = styled.div`
   height: 85%;
   margin-top: -4%;
 
- 
   align-items: flex-start;
   gap: 10px;
   border-radius: 90px;
-  background: #00C247;
+  background: #00c247;
 `;
 
 export const TextPorcentagem = styled.p`

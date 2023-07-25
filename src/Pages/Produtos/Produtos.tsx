@@ -15,7 +15,7 @@ const Produtos = () => {
   const [searchTerm, setSearchTerm] = React.useState<string>("");
   const [openModal, setOpenModal] = React.useState(false);
   const [classificacao, setClassificacao] = React.useState<string | null>(null);
-  const [filterProducts, setFilterProducts] = React.useState([]);
+  const [filterProducts, setFilterProducts] = React.useState<[]>([]);
 
   const size = 10;
 
@@ -28,16 +28,13 @@ const Produtos = () => {
   );
 
   const List = data?.content;
+  
   console.log(List);
   useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
-      GetUser.produtosList(searchTerm, page, size);
-      if (data) {
-        setTotal(data.totalPages);
-      }
-    }, 300);
-
-    return () => clearTimeout(delayDebounceFn);
+    GetUser.produtosList(searchTerm, page, size);
+    if (data) {
+      setTotal(data.totalPages);
+    }
   }, [searchTerm, page, data]);
 
   const handleSearch = (event: {
@@ -48,7 +45,7 @@ const Produtos = () => {
       setSearchTerm(event.target.value);
     }
   };
-
+  console.log(searchTerm);
   const applyFilter = () => {
     if (classificacao === "EM_ALTA" || classificacao === "EM_BAIXA") {
       const filteredList = List.filter(
@@ -84,14 +81,13 @@ const Produtos = () => {
           </S.ButtonFilter>
           <SmallModalProducts
             isOpen={openModal}
-            
             emAlta={() => {
               setClassificacao("EM_ALTA");
-              // setListTodos(false);
+              
             }}
             emBaixa={() => {
               setClassificacao("EM_BAIXA");
-              // setListTodos(false);
+              
             }}
             todos={handleCheckedTodos}
             buttonAplication={handleButtonApply}
@@ -126,27 +122,32 @@ const Produtos = () => {
 
         <S.DivPages>
           <S.TextPages>
-            {page} de {total} itens
+            <div>
+              {page} de {total} itens
+            </div>
           </S.TextPages>
           <S.DivButton>
             <S.BtnAngleDoubleRight
               onClick={() => setPage((old) => Math.max(old - 10, 10))}
               disabled={page === 1}
             ></S.BtnAngleDoubleRight>
-            <S.BtnPrev
-              onClick={() => setPage((old) => Math.max(old - 1, 1))}
-              disabled={page === 1}
-            >
-              Anterior
-            </S.BtnPrev>
+
+            {page > 1 && (
+              <S.BtnPrev onClick={() => setPage((old) => Math.max(old - 1, 1))}>
+                Anterior
+              </S.BtnPrev>
+            )}
+
             <S.TextNumber>{page}</S.TextNumber>
 
-            <S.BtnNext
-              onClick={() => setPage((old) => Math.max(old + 1))}
-              disabled={List && List.length < size}
-            >
-              Próxima
-            </S.BtnNext>
+            {page < total && (
+              <S.BtnNext
+                onClick={() => setPage((old) => Math.min(old + 1, total))}
+              >
+                Próxima
+              </S.BtnNext>
+            )}
+
             <S.BtnAngleDoubleRight
               onClick={() => setPage((old) => Math.max(old + 10))}
               disabled={List && List.length < size}

@@ -10,10 +10,7 @@ export const UserLogin = () => {
   const [email, setEmail] = useState("");
   const [openModal, setOpenModal] = useState(false);
 
-
-
   useEffect(() => {
-   
     const fetchGetUser = async () => {
       try {
         const data = await GetUser.userName();
@@ -29,7 +26,7 @@ export const UserLogin = () => {
 
   return (
     <>
-      <S.Container>
+      <S.Container id="user-Login">
         <div>
           <img src={ImgUser} alt="Usuário" />
         </div>
@@ -43,7 +40,7 @@ export const UserLogin = () => {
             <img src={ImgDropdown} alt="" />
           </S.BtnDropdown>
         </div>
-        <ModalLogout isOpen={openModal}/>
+        <ModalLogout isOpen={openModal} />
       </S.Container>
     </>
   );
