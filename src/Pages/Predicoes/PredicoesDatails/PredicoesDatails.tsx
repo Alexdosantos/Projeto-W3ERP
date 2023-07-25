@@ -13,13 +13,13 @@ import ImgBaixa from '../../../assets/Icons/check-one.svg'
 export const PredicoesDatails = () => {
   const { id } = useParams();
   const { data: historico } = useQuery(["predicaoHistorico", id], () =>
-    GetUser.predicaoHistorico(id)
+    GetUser.predicaoHistorico(id!)
   );
   const { data: esgotado } = useQuery(["predicaoEsgotado", id], () =>
-    GetUser.predicaoEsgotados(id)
+    GetUser.predicaoEsgotados(id!)
   );
   const { data: clienteId } = useQuery(["cliente", id], () =>
-    GetUser.clienteId(id)
+    GetUser.clienteId(id!)
   );
   console.log(clienteId);
   console.log(historico);

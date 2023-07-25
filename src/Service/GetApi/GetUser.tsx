@@ -136,7 +136,7 @@ export const GetUser = {
       throw error;
     }
   },
-  predicaoEsgotados: async (id: number) => {
+  predicaoEsgotados: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/predicao/${id}/esgotando `, {

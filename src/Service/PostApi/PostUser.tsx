@@ -6,24 +6,18 @@ export const UseApi = () => ({
 
 
   
-    login: async (email: string , senha: string):Promise<void> => {
+    login: async (email: string , senha: string) => {
       const response = await api.post("/central/autenticacao/login", {
         email,
         senha,
       });     
       return response.data;
     },
-    validateToken: async (token: string):Promise<void> => {
+    validateToken: async (token: string) => {
       const response = await api.post("/central/autenticacao/login", { token });
       return response.data;
     },
-    // logout: async ({setToken}: string | null) => {
-    //   localStorage.removeItem('token');
-    //   setToken('');
-    //   <Navigate to='/' />
-    //   // const response = await api.post("/central/autenticacao/login");
-    //   // return response.data;
-    // },
+    
     
     
   
