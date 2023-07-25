@@ -16,7 +16,11 @@ const Login = () => {
 
   const navigate = useNavigate();
   const api = UseApi();
-
+  
+  const setToken = (token: string) => {
+    localStorage.setItem("AUTH_TOKEN", token);
+  };
+   
   const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log("Email:", email);
@@ -32,9 +36,7 @@ const Login = () => {
     }
   };
 
-  const setToken = (token: string) => {
-    localStorage.setItem("AUTH_TOKEN", token);
-  };
+  
   return (
     <>
       <form action="" onSubmit={handleForm}>
