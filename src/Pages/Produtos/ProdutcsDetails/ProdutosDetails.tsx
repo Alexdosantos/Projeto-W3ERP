@@ -19,7 +19,6 @@ export const ProdutosDetails = () => {
   const { data: produtosResumo } = useQuery(["produtosResumo", id], () =>
     GetUser.produtosResumo(id)
   );
-  console.log(produtosResumo);
 
   const { data: clienteEmBaixa } = useQuery(["clienteEmBaixa", id], () =>
     GetUser.clienteEmBaixa(id)
@@ -29,7 +28,7 @@ export const ProdutosDetails = () => {
   const { data: clienteEmAlta } = useQuery(["clienteEmAlta", id], () =>
     GetUser.clienteEmAlta(id)
   );
-  console.log(clienteEmAlta);
+
   return (
     <>
       <Layout>
