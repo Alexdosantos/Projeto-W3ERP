@@ -1,4 +1,9 @@
-import {Checkbox,InputAdornment,Typography,FormControlLabel} from "@mui/material";
+import {
+  Checkbox,
+  InputAdornment,
+  Typography,
+  FormControlLabel,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { UseApi } from "../../Service/PostApi/PostUser";
