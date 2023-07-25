@@ -1,7 +1,7 @@
 import { api } from "../../Hooks/UseApi";
 
 export const GetUser = {
-  userName: async () => {
+  userName: async ():Promise<void> => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get("/central/usuario/me", {

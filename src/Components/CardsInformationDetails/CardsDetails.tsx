@@ -1,9 +1,6 @@
 import * as S from "./CardsDetails.styled";
 import { SmallBlueCard } from "../SmallCards/SmallBlueCard/SmallBlueCard";
 import { SmallCardWhite } from "../SmallCards/SmallCardWhite/SmallCardWhite";
-import { GetUser } from "../../Service/GetApi/GetUser";
-import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
 import { SmallCardProcentagem } from "../SmallCardPorcentagem/SmallCardProcentagem";
 
 export interface Root {
