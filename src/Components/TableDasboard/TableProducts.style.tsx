@@ -8,17 +8,17 @@ export const Container = styled.div`
   box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
   overflow: auto;
 
-  /* Ocultar a barra de rolagem */
-  scrollbar-width: thin; /* Para navegadores Firefox */
-  scrollbar-color: transparent transparent; /* Para navegadores Chrome e Safari */
+ 
+  scrollbar-width: thin; 
+  scrollbar-color: transparent transparent; 
 
-  /* Estilos para navegadores Chrome e Safari */
+ 
   &::-webkit-scrollbar {
-    width: 6px; /* Largura da barra de rolagem */
+    width: 6px; 
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: transparent; /* Cor do polegar da barra de rolagem */
+    background-color: transparent; 
   }
 `;
 export const TableDashboard = styled.table`
@@ -76,7 +76,7 @@ export const TdStatus = styled.td<TdProps>`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; /* 24px */
+  line-height: 150%; 
   letter-spacing: 0.2px;
 
   background-color: ${(props) => {
@@ -95,11 +95,11 @@ export const TdStatus = styled.td<TdProps>`
   color: ${(props) => {
     switch (props.$status) {
       case "EM_ALTA":
-        return "#00C247"; // Texto branco para EM_ALTA
+        return "#00C247"; 
       case "EM_BAIXA":
         return "#FF3333";
       case "NEUTRO":
-        return "white"; // Texto branco para EM_BAIXA
+        return "white"; 
       default:
         return "black";
     }

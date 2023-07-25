@@ -28,7 +28,7 @@ const Produtos = () => {
   );
 
   const List = data?.content;
-  
+
   console.log(List);
   useEffect(() => {
     GetUser.produtosList(searchTerm, page, size);
@@ -45,7 +45,6 @@ const Produtos = () => {
       setSearchTerm(event.target.value);
     }
   };
-  console.log(searchTerm);
   const applyFilter = () => {
     if (classificacao === "EM_ALTA" || classificacao === "EM_BAIXA") {
       const filteredList = List.filter(
@@ -83,11 +82,9 @@ const Produtos = () => {
             isOpen={openModal}
             emAlta={() => {
               setClassificacao("EM_ALTA");
-              
             }}
             emBaixa={() => {
               setClassificacao("EM_BAIXA");
-              
             }}
             todos={handleCheckedTodos}
             buttonAplication={handleButtonApply}

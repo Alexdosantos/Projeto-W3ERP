@@ -14,10 +14,6 @@ import ImgCAlta from "../../../assets/Icons/clienteEmAlta.png";
 import * as S from "./ProdutosDetails.Style";
 import { HeardClienteTable } from "../../../Components/HeardClienteTable/HeardClienteTable";
 
-
-
-
-
 export const ProdutosDetails = () => {
   const { id } = useParams();
   const { data: produtosResumo } = useQuery(["produtosResumo", id], () =>
@@ -27,7 +23,6 @@ export const ProdutosDetails = () => {
   const { data: clienteEmBaixa } = useQuery(["clienteEmBaixa", id], () =>
     GetUser.clienteEmBaixa(id!)
   );
-  console.log(clienteEmBaixa);
 
   const { data: clienteEmAlta } = useQuery(["clienteEmAlta", id], () =>
     GetUser.clienteEmAlta(id!)
@@ -60,17 +55,14 @@ export const ProdutosDetails = () => {
           <SmallCardWhite
             title="Últimos 60 dias "
             text={produtosResumo?.ultimos60Dias}
-            
           />
           <SmallCardWhite
             title="Últimos 90 dias "
             text={produtosResumo?.ultimos90Dias}
-            
           />
           <SmallCardWhite
             title="Últimos 120 dias "
             text={produtosResumo?.ultimos120Dias}
-            
           />
         </S.Wapper>
 

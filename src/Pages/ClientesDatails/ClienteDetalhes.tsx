@@ -1,44 +1,43 @@
-import * as S from './ClienteDetalhe.Style'
-import { ExitDatails } from "../../Components/ExitDatails/ExitDatails"
-import { Layout } from "../../Components/Layout/Layout"
-import { GetUser} from "../../Service/GetApi/GetUser"
-import { useParams } from "react-router-dom"
-import { useQuery } from "react-query"
-import ImgPrev from '../../assets/Icons/left-small.svg.png'
-import { SmallBlueCard } from "../../Components/SmallCards/SmallBlueCard/SmallBlueCard"
-import { SmallCardWhite } from "../../Components/SmallCards/SmallCardWhite/SmallCardWhite"
-import { SmallCardProcentagem } from "../../Components/SmallCardPorcentagem/SmallCardProcentagem"
-import TabelaProducts from '../../Components/TableDasboard/TableProducts'
+import * as S from "./ClienteDetalhe.Style";
+import { ExitDatails } from "../../Components/ExitDatails/ExitDatails";
+import { Layout } from "../../Components/Layout/Layout";
+import { GetUser } from "../../Service/GetApi/GetUser";
+import { useParams } from "react-router-dom";
+import { useQuery } from "react-query";
+import ImgPrev from "../../assets/Icons/left-small.svg.png";
+import { SmallBlueCard } from "../../Components/SmallCards/SmallBlueCard/SmallBlueCard";
+import { SmallCardWhite } from "../../Components/SmallCards/SmallCardWhite/SmallCardWhite";
+import { SmallCardProcentagem } from "../../Components/SmallCardPorcentagem/SmallCardProcentagem";
+import TabelaProducts from "../../Components/TableDasboard/TableProducts";
 
 export const ClienteDetalhes = () => {
   const { id } = useParams();
   const { data: produtosResumo } = useQuery(["produtosResumo", id], () =>
     GetUser.produtosResumo(id!)
   );
-  console.log(produtosResumo);
+
   const { data: produtosEmBaixa } = useQuery(["produtosEmBaixa", id], () =>
     GetUser.produtosEmABaixa(id!)
   );
-  console.log(produtosEmBaixa);
-  const { data: produtosEmAlta} = useQuery(["produtosEmAlta", id], () =>
+
+  const { data: produtosEmAlta } = useQuery(["produtosEmAlta", id], () =>
     GetUser.produtosEmAlta(id!)
   );
-  console.log(produtosEmAlta);
-  
-  const { data: clienteId} = useQuery(["clienteId", id], () =>
+
+  const { data: clienteId } = useQuery(["clienteId", id], () =>
     GetUser.clienteId(id!)
   );
-  console.log(clienteId);
+
   return (
     <>
-    <Layout>
-    <ExitDatails
-            url={"/Dashboard"}
-            imagem={ImgPrev}
-            text="Detalhamento"
-            title={clienteId?.nome}
-          />
-      <S.Wapper>
+      <Layout>
+        <ExitDatails
+          url={"/Dashboard"}
+          imagem={ImgPrev}
+          text="Detalhamento"
+          title={clienteId?.nome}
+        />
+        <S.Wapper>
           <SmallBlueCard
             title="Média 120 dias"
             text={produtosResumo?.media120Dias}
@@ -73,10 +72,7 @@ export const ClienteDetalhes = () => {
           <TabelaProducts nav={""} id="ID" dados={produtosEmBaixa} />
           <TabelaProducts nav={""} id="ID" dados={produtosEmAlta} />
         </S.DivTable>
-
-    </Layout>
-   
-    
+      </Layout>
     </>
-  )
-}
+  );
+};

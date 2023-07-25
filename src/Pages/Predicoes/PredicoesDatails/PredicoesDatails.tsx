@@ -21,10 +21,6 @@ export const PredicoesDatails = () => {
   const { data: clienteId } = useQuery(["cliente", id], () =>
     GetUser.clienteId(id!)
   );
-  console.log(clienteId);
-  console.log(historico);
-  console.log(esgotado);
-
   return (
     <>
       <Layout>

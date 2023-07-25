@@ -12,7 +12,6 @@ export const ModalLogout = ({ isOpen }: ModalLogoutProps) => {
   const navigate = useNavigate();
 
   const logout = async (): Promise<void> => {
-    console.log("usualio desconectado", logout);
     localStorage.removeItem("AUTH_TOKEN");
     setToken(" ");
     navigate("/");

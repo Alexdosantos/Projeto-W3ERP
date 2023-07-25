@@ -3,21 +3,13 @@ import { TextField } from "@mui/material";
 
 export const CardBoxGeneral = styled.div`
   display: flex;
+
   align-items: center;
   justify-content: space-between;
-  
-  
-
-
 `;
 
 export const ImgLogin = styled.img`
- @media (min-width: 1024px) {
-    /* Estilos para telas com largura mínima de 1024px */
-    width: 44vw;
-  }
-
-  
+  width: 100%;
 `;
 
 export const CardBoxForm = styled.div`
@@ -25,7 +17,7 @@ export const CardBoxForm = styled.div`
   flex-direction: column;
   gap: 50px;
   margin: 0 auto;
-  /* background: #bdbdbd; */
+ 
 `;
 
 export const TextH3 = styled.h3`
@@ -128,7 +120,7 @@ export const InputsPassword = styled.input`
     border: 1px solid #2ecc71;
     outline: none;
   }
-  
+
   &:focus + ${LabelInputs} {
     color: #2ecc71;
   }
@@ -149,7 +141,6 @@ export const StyledTextField = styled(TextField)`
     }
   }
 `;
-
 
 export const DivToRemember = styled.div`
   display: flex;

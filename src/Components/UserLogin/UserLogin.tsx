@@ -8,7 +8,6 @@ import { ModalLogout } from "../ModalLogout/ModalLogout";
 interface UserData {
   nome: string;
   email: string;
-  
 }
 
 export const UserLogin = () => {
@@ -20,7 +19,6 @@ export const UserLogin = () => {
     const fetchGetUser = async () => {
       try {
         const data: UserData = await GetUser.userName();
-        console.log(data);
         setNome(data.nome);
         setEmail(data.email);
       } catch (err) {

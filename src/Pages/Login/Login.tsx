@@ -16,27 +16,23 @@ const Login = () => {
 
   const navigate = useNavigate();
   const api = UseApi();
-  
+
   const setToken = (token: string) => {
     localStorage.setItem("AUTH_TOKEN", token);
   };
-   
+
   const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Senha:", senha);
 
     try {
       const data = await api.login(email, senha);
       setToken(data.token);
-      console.log("Usuário conectado", data);
       navigate("/Dashboard");
     } catch (error) {
       console.log("Usuário  não encontrado");
     }
   };
 
-  
   return (
     <>
       <form action="" onSubmit={handleForm}>

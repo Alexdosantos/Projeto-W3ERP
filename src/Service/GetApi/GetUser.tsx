@@ -1,6 +1,5 @@
 import { api } from "../../Hooks/UseApi";
 
-
 export const GetUser = {
   userName: async () => {
     try {
@@ -88,7 +87,7 @@ export const GetUser = {
       throw error;
     }
   },
-  produtosResumo: async (id: string ) => {
+  produtosResumo: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(`/app/produto/${id}/resumo `, {
@@ -179,7 +178,7 @@ export const GetUser = {
       throw error;
     }
   },
-  clienteEmBaixa: async (id:string) => {
+  clienteEmBaixa: async (id: string) => {
     try {
       const token = localStorage.getItem("AUTH_TOKEN") || "";
       const response = await api.get(
