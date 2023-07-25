@@ -9,7 +9,7 @@ import { SmallCardWhite } from "../../../Components/SmallCards/SmallCardWhite/Sm
 import TabelaProducts from "../../../Components/TableDasboard/TableProducts";
 import ImgPrev from "../../../assets/Icons/left-small.svg.png";
 import ImgCBaixa from "../../../assets/Icons/ClienteEmBaixa.png";
-import ImgCAlta from "../../../assets/Icons/ClienteEmAlta.png";
+import ImgCAlta from "../../../assets/Icons/clienteEmAlta.png";
 
 import * as S from "./ProdutosDetails.Style";
 import { HeardClienteTable } from "../../../Components/HeardClienteTable/HeardClienteTable";
