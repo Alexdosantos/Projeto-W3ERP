@@ -1,5 +1,6 @@
+import React from "react";
 import Tour from "reactour";
-import { useState } from "react";
+// import { useState } from "react";
 type StepsProps = {
   selector: string;
   content: string;
@@ -63,14 +64,28 @@ const steps: StepsProps[] = [
   },
 ];
 const TourComponent = () => {
-  const [isTourOpen, setIsTourOpen] = useState(true);
+  const [isTourOpen, setIsTourOpen] = React.useState(false);
+  // const [isNewUser, setIsNewUser] = React.useState(true);
+
+  React.useEffect(() => {
+    const hasViewedTour = localStorage.getItem('hasViewedTour');
+    if (!hasViewedTour) {
+      setIsTourOpen(true);
+    } 
+  }, []);
+
+  const handleCloseTour = () => {
+    localStorage.setItem('hasViewedTour', 'true');
+    setIsTourOpen(false);
+  };
+
   return (
     <div>
       {isTourOpen && (
         <Tour
           steps={steps}
           isOpen={isTourOpen}
-          onRequestClose={() => setIsTourOpen(false)}
+          onRequestClose={handleCloseTour} // Correção aqui
         />
       )}
     </div>
