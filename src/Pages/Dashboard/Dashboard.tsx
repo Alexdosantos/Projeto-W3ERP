@@ -10,7 +10,7 @@ import ImgNext from "../../assets/Icons/right.svg";
 import { GetUser } from "../../Service/GetApi/GetUser";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import TourComponent from "../../Hooks/Tour/TourDashboard";
+import TourComponent from "../../Tour/TourDashboard";
 
 type DashProps = {
   classificacao: string;
