@@ -65,17 +65,16 @@ const steps: StepsProps[] = [
 ];
 const TourComponent = () => {
   const [isTourOpen, setIsTourOpen] = React.useState(false);
-  // const [isNewUser, setIsNewUser] = React.useState(true);
 
   React.useEffect(() => {
-    const hasViewedTour = localStorage.getItem('hasViewedTour');
+    const hasViewedTour = localStorage.getItem("hasViewedTour");
     if (!hasViewedTour) {
       setIsTourOpen(true);
-    } 
+    }
   }, []);
 
   const handleCloseTour = () => {
-    localStorage.setItem('hasViewedTour', 'true');
+    localStorage.setItem("hasViewedTour", "visualized");
     setIsTourOpen(false);
   };
 
@@ -85,7 +84,7 @@ const TourComponent = () => {
         <Tour
           steps={steps}
           isOpen={isTourOpen}
-          onRequestClose={handleCloseTour} // Correção aqui
+          onRequestClose={handleCloseTour}
         />
       )}
     </div>

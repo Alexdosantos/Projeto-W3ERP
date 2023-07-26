@@ -8,17 +8,15 @@ export const Container = styled.div`
   box-shadow: 0px 7px 30px 0px rgba(187, 192, 205, 0.4);
   overflow: auto;
 
- 
-  scrollbar-width: thin; 
-  scrollbar-color: transparent transparent; 
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
 
- 
   &::-webkit-scrollbar {
-    width: 6px; 
+    width: 6px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: transparent; 
+    background-color: transparent;
   }
 `;
 export const TableDashboard = styled.table`
@@ -52,7 +50,7 @@ export const Td = styled.td`
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0.2px;
-
+  
   &:nth-child(2) {
     padding-left: 10%;
     text-align: left;
@@ -76,7 +74,7 @@ export const TdStatus = styled.td<TdProps>`
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 150%; 
+  line-height: 150%;
   letter-spacing: 0.2px;
 
   background-color: ${(props) => {
@@ -95,11 +93,11 @@ export const TdStatus = styled.td<TdProps>`
   color: ${(props) => {
     switch (props.$status) {
       case "EM_ALTA":
-        return "#00C247"; 
+        return "#00C247";
       case "EM_BAIXA":
         return "#FF3333";
       case "NEUTRO":
-        return "white"; 
+        return "white";
       default:
         return "black";
     }

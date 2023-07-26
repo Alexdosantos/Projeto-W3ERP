@@ -9,10 +9,14 @@ import { useState } from "react";
 import { UseApi } from "../../Service/PostApi/PostUser";
 import ImgLogin from "../../assets/ImgLogin/ImgLogin.jpeg";
 import * as S from "./Login.Style";
+import { ModalError } from "../../Components/ModalError/ModalError";
 
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [senha, setSenha] = useState<string>("");
+  const [erro, setErro] = useState<string | null>(null);
+  const [erroEmail, setErroEmail] = useState<string | null>(null);
+  const [erroSenha, setErroSenha] = useState<string | null>(null);
 
   const navigate = useNavigate();
   const api = UseApi();
@@ -24,17 +28,37 @@ const Login = () => {
   const handleForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (!email || !senha) {
+      setErroEmail(!email ? "Preencha o campo Email" : null);
+      setErroSenha(!senha ? "Preencha o campo Senha" : null);
+      return;
+    }
+
     try {
       const data = await api.login(email, senha);
       setToken(data.token);
       navigate("/Dashboard");
     } catch (error) {
-      console.log("Usuário  não encontrado");
+      setErroEmail(null);
+      setErroSenha(null);
+      setErro("Usuário não encontrado");
     }
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setErroEmail(null);
+    setEmail(e.target.value);
+  };
+
+  const handleSenhaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setErroSenha(null);
+    setSenha(e.target.value);
   };
 
   return (
     <>
+      <S.DivErro>{erro && <ModalError error={erro} />}</S.DivErro>
+
       <form action="" onSubmit={handleForm}>
         <S.CardBoxGeneral>
           <S.CardBoxForm>
@@ -47,7 +71,7 @@ const Login = () => {
                 label="E-mail"
                 type="text"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={handleEmailChange}
                 InputProps={{
                   style: {
                     color: "black",
@@ -55,7 +79,11 @@ const Login = () => {
                   },
                   endAdornment: (
                     <InputAdornment position="end">
-                      {/* Aqui você pode adicionar o ícone ou qualquer outro conteúdo */}
+                      {erroEmail && !email ? (
+                        <S.ErroEmail>*preecha o campo Email*</S.ErroEmail>
+                      ) : (
+                        ""
+                      )}
                     </InputAdornment>
                   ),
                 }}
@@ -65,7 +93,7 @@ const Login = () => {
                 label="Senha"
                 type="password"
                 value={senha}
-                onChange={(e) => setSenha(e.target.value)}
+                onChange={handleSenhaChange}
                 InputProps={{
                   style: {
                     color: "black",
@@ -73,7 +101,11 @@ const Login = () => {
                   },
                   endAdornment: (
                     <InputAdornment position="end">
-                      {/* Aqui você pode adicionar o ícone ou qualquer outro conteúdo */}
+                      {erroSenha && !senha ? (
+                        <S.ErroEmail>*preecha o campo Senha*</S.ErroEmail>
+                      ) : (
+                        ""
+                      )}
                     </InputAdornment>
                   ),
                 }}

@@ -17,7 +17,6 @@ export const CardBoxForm = styled.div`
   flex-direction: column;
   gap: 50px;
   margin: 0 auto;
- 
 `;
 
 export const TextH3 = styled.h3`
@@ -178,3 +177,22 @@ export const BtnLogin = styled.button`
     background: #0020ac;
   }
 `;
+
+export const DivErro = styled.div`
+  align-items: center;
+  text-align: center;
+  position: absolute;
+
+  margin: 1% 0 0 15%;
+  width: 25%;
+
+`;
+
+export  const ErroEmail = styled.p`
+font-family: Sora;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 28px;
+  color: #ff0000;
+
+`
