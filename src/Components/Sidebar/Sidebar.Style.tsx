@@ -120,6 +120,7 @@ export const DivSupport = styled.div`
   justify-content: center;
   align-items: center;
   width: 223px;
+  height: 190px;
 
   margin: 240px 0 0 0;
   background: #796ce0;

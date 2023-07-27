@@ -19,6 +19,7 @@ export const BtnNavTable = styled.button<ButtonProps>`
   font-weight: 600;
   line-height: 140%;
   letter-spacing: 0.2px;
+  cursor: pointer;
 
   background-color: ${(props) =>
     props.$active
