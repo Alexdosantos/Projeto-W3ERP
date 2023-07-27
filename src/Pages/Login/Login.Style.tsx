@@ -3,13 +3,13 @@ import { TextField } from "@mui/material";
 
 export const CardBoxGeneral = styled.div`
   display: flex;
+
   align-items: center;
   justify-content: space-between;
-  
 `;
 
 export const ImgLogin = styled.img`
- 
+  
 `;
 
 export const CardBoxForm = styled.div`
@@ -17,7 +17,6 @@ export const CardBoxForm = styled.div`
   flex-direction: column;
   gap: 50px;
   margin: 0 auto;
-  
 `;
 
 export const TextH3 = styled.h3`
@@ -184,15 +183,16 @@ export const DivErro = styled.div`
   text-align: center;
   position: absolute;
 
-  margin: -1% 0 0 15%;
+  margin: -1% 0 0 18%;
   width: 25%;
-  z-index: 1;
+
 `;
 
-export const ErroEmail = styled.p`
-  font-family: Sora;
+export  const ErroEmail = styled.p`
+font-family: Sora;
   font-weight: 400;
   font-size: 15px;
   line-height: 28px;
   color: #ff0000;
-`;
+
+`

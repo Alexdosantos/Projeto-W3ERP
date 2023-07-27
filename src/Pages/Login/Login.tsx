@@ -7,7 +7,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { UseApi } from "../../Service/PostApi/PostUser";
-import ImgLogin from "../../assets/ImgLogin/ImgLogin.jpeg";
+import ImgLogin from "../../assets/ImgLogin/imgUser.png";
 import * as S from "./Login.Style";
 import { ModalError } from "../../Components/ModalError/ModalError";
 
@@ -62,7 +62,6 @@ const Login = () => {
   return (
     <>
       <S.DivErro>{erro && <ModalError error={erro} />}</S.DivErro>
-
       <form action="" onSubmit={handleForm}>
         <S.CardBoxGeneral>
           <S.CardBoxForm>
