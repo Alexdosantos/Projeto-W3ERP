@@ -18,15 +18,12 @@ const RoutesProjects = () => {
         <Routes>
           <Route path="/" element={<Login />} />
          
-         <Route path="Dashboard" element={<AuthenticLogin> <Dashbord /></AuthenticLogin> } />
+          <Route path="Dashboard" element={<AuthenticLogin> <Dashbord /></AuthenticLogin> } />
           <Route path="Predicoes" element={<AuthenticLogin><Predicoes /></AuthenticLogin>} />
           <Route  path="/Predicoes/:id" element={<PredicoesDatails/>}/>
           <Route path="Produtos" element={<AuthenticLogin><Produtos /></AuthenticLogin>} /> 
           <Route path="/Produtos/detalhes/produtos/:id" element={<ProdutosDetails />} />
           <Route path="/Produtos/detalhes/clientes/:id" element={<ClienteDetalhes/>} />
-        
-          
-                  
         </Routes>
       </BrowserRouter>
     </>

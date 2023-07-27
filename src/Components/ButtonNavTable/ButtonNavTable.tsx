@@ -1,6 +1,5 @@
 import * as S from "./ButtonNavTable.Style";
 
-
 type ButtonNavTableProps = {
   onClick: () => void;
   title: string;
@@ -12,7 +11,7 @@ export const ButtonNavTable = ({
   onClick,
   title,
   active,
-  buttonType
+  buttonType,
 }: ButtonNavTableProps) => {
   return (
     <S.BtnNavTable $active={active} $buttontype={buttonType} onClick={onClick}>

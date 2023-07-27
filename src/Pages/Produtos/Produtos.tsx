@@ -29,7 +29,6 @@ const Produtos = () => {
 
   const List = data?.content;
 
-  console.log(List);
   useEffect(() => {
     GetUser.produtosList(searchTerm, page, size);
     if (data) {

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const DivTable = styled.div`
   display: flex;
   gap: 2%;

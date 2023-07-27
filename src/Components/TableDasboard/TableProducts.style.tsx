@@ -50,7 +50,7 @@ export const Td = styled.td`
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0.2px;
-  
+
   &:nth-child(2) {
     padding-left: 10%;
     text-align: left;

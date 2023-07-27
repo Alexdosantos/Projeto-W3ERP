@@ -1,4 +1,4 @@
-import { api } from "../../Hooks/UseApi";
+import { api } from "../../Hooks/useApi";
 
 export const GetUser = {
   userName: async () => {

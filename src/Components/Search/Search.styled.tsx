@@ -8,15 +8,13 @@ export const Container = styled.div`
   border-radius: 16px;
   border: 1.5px solid #e0e0e0;
   background: #fff;
-
-  
 `;
 
 export const Input = styled.input`
   width: 300px;
   border: none;
   outline: none;
-  padding:  0 0 0 5%;
+  padding: 0 0 0 5%;
 
   color: #757575;
 

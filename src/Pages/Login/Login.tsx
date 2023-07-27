@@ -38,10 +38,14 @@ const Login = () => {
       const data = await api.login(email, senha);
       setToken(data.token);
       navigate("/Dashboard");
-    } catch (error) {
+    } catch (error: any) {
       setErroEmail(null);
       setErroSenha(null);
-      setErro("Usuário não encontrado");
+      if (error.response && error.response.status === 401) {
+        setErro("Credenciais inválidas. Verifique seu e-mail e senha.");
+      } else if (error.response && error.response.status === 404) {
+        setErro("Recurso não encontrado. Verifique a URL da API.");
+      }
     }
   };
 

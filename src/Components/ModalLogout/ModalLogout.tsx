@@ -4,11 +4,10 @@ import { useState } from "react";
 
 type ModalLogoutProps = {
   isOpen: boolean;
-  
 };
 
 export const ModalLogout = ({ isOpen }: ModalLogoutProps) => {
-  const [ , setToken] = useState<string>("");
+  const [, setToken] = useState<string>("");
   const navigate = useNavigate();
 
   const logout = async (): Promise<void> => {
@@ -28,7 +27,6 @@ export const ModalLogout = ({ isOpen }: ModalLogoutProps) => {
           <S.Division />
           <S.DivExit>
             <S.IconExit />
-            {/* <S.TextExit to={"/"}>Sair</S.TextExit> */}
             <S.BtnExit onClick={logout}>Sair</S.BtnExit>
           </S.DivExit>
         </S.Wapper>

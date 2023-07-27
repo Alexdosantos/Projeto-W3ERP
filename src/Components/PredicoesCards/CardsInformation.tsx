@@ -6,15 +6,15 @@ import MiniTableCards from "../SmallTable/SmallTableCards";
 import { Link } from "react-router-dom";
 
 export type TableData = {
-    nome: string; proximaCompra: string , id:number
-
-}
-type CardsInformationProps = {
-  company: string;
-  dados:Array<TableData>;
+  nome: string;
+  proximaCompra: string;
   id: number;
 };
-
+type CardsInformationProps = {
+  company: string;
+  dados: Array<TableData>;
+  id: number;
+};
 
 export const CardsInformation = ({
   dados,

@@ -1,22 +1,20 @@
 import Grafics from "../../Grafics/Grafics";
 import * as S from "./HighCard.styled";
 
-type CardBaixaProps ={
-  title:string
-  total:number | string
-  porcentagem: number | string
-  data?: Array<{ name: string, value: number }>
-  
-  
-}
+type CardBaixaProps = {
+  title: string;
+  total: number | string;
+  porcentagem: number | string;
+  data?: Array<{ name: string; value: number }>;
+};
 
-const HighCard = ({title ,porcentagem,total ,data }:CardBaixaProps) => {
+const HighCard = ({ title, porcentagem, total, data }: CardBaixaProps) => {
   return (
     <>
-      <S.Container >
+      <S.Container>
         <S.Wapper>
           <S.DivGraphics>
-            <Grafics data={data}/>
+            <Grafics data={data} />
           </S.DivGraphics>
           <S.Container1>
             <S.TextP>
@@ -38,4 +36,4 @@ const HighCard = ({title ,porcentagem,total ,data }:CardBaixaProps) => {
   );
 };
 
-export default HighCard 
+export default HighCard;

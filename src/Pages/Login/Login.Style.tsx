@@ -185,14 +185,12 @@ export const DivErro = styled.div`
 
   margin: 1% 0 0 15%;
   width: 25%;
-
 `;
 
-export  const ErroEmail = styled.p`
-font-family: Sora;
+export const ErroEmail = styled.p`
+  font-family: Sora;
   font-weight: 400;
   font-size: 15px;
   line-height: 28px;
   color: #ff0000;
-
-`
+`;

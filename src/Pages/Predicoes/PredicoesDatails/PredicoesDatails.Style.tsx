@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Wapper = styled.div`
   display: flex;
   gap: 2%;
@@ -10,7 +9,7 @@ export const Wapper = styled.div`
 export const ImgLeft = styled.img``;
 
 export const TitleH4 = styled.h4`
-padding-top: 6%;
+  padding-top: 6%;
   color: #212121;
 
   font-family: Sora;
@@ -21,8 +20,8 @@ padding-top: 6%;
   letter-spacing: 0.2px;
 `;
 
-export const DivTable =styled.div`
+export const DivTable = styled.div`
   display: flex;
   margin: 5% 2% 0 2%;
   gap: 5%;
-`
+`;

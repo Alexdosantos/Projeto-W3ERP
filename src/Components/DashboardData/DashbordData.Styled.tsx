@@ -3,26 +3,23 @@ import styled from "styled-components";
 export const Container = styled.div`
   box-sizing: content-box;
 
-  
   margin: 5% 0 0 1%;
   width: 95%;
   height: 295px;
   border-radius: 24px;
   background: #001c98;
-
 `;
 
 export const Container1 = styled.div`
   display: flex;
   justify-content: space-between;
-  
 `;
 
 export const DivCardsInformation = styled.div`
-    display: flex;
-    gap: 4%;
-    margin: 2% 0 0 2%;
-`
+  display: flex;
+  gap: 4%;
+  margin: 2% 0 0 2%;
+`;
 
 export const DivCards = styled.div`
   width: 20%;
@@ -47,7 +44,6 @@ export const ContainerCaledarios = styled.div`
   gap: 3px;
   justify-content: center;
   margin: 30px 50px 0 0;
-
 
   background: #fff;
   border-radius: 8px;

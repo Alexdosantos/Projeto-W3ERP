@@ -1,16 +1,11 @@
 import { TableData } from "../PredicoesCards/CardsInformation";
 import * as S from "./SmallTableCards.Style";
 
-
 type MiniTableProps = {
   dados: Array<TableData>;
-  
-  
 };
 
 const MiniTableCards = ({ dados }: MiniTableProps) => {
-
-
   return (
     <S.Container>
       <table>
@@ -21,15 +16,14 @@ const MiniTableCards = ({ dados }: MiniTableProps) => {
           </tr>
         </thead>
         <tbody>
-          
-            {dados && dados.map((item) => (
+          {dados &&
+            dados.map((item) => (
               <tr key={item.id}>
                 <S.Td>{item.nome}</S.Td>
-                
-                  <S.Td1>
-                    <strong>{item.proximaCompra}</strong>
-                  </S.Td1>
-                
+
+                <S.Td1>
+                  <strong>{item.proximaCompra}</strong>
+                </S.Td1>
               </tr>
             ))}
         </tbody>

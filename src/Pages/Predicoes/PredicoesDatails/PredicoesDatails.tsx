@@ -9,7 +9,7 @@ import { GetUser } from "../../../Service/GetApi/GetUser";
 import { useQuery } from "react-query";
 import { HeardHistorico } from "../../../Components/HeardHistorico/HeardHistorico";
 import { HeardProdutoEsgotado } from "../../../Components/HeardProdutoEsgotado/HeardProdutoEsgotado";
-import ImgBaixa from '../../../assets/Icons/check-one.svg'
+import ImgBaixa from "../../../assets/Icons/check-one.svg";
 export const PredicoesDatails = () => {
   const { id } = useParams();
   const { data: historico } = useQuery(["predicaoHistorico", id], () =>
@@ -40,39 +40,49 @@ export const PredicoesDatails = () => {
           email={clienteId?.email}
         />
         <S.DivTable>
-          
-          <TabelaProducts 
-          nav={<HeardHistorico />} 
-          id="ID" dados={historico && historico.map((item:{ id: number; nome: string; ultimaCompra: number; quantidade: number; }) =>({
-              id: item.id,
-              nome: item.nome,
-              ultimaCompra: item.ultimaCompra,
-              imagemBaixa:(
-                <img src={ImgBaixa} alt="" />
-              ),
-                            quantidade: item.quantidade
+          <TabelaProducts
+            nav={<HeardHistorico />}
+            id="ID"
+            dados={
+              historico &&
+              historico.map(
+                (item: {
+                  id: number;
+                  nome: string;
+                  ultimaCompra: number;
+                  quantidade: number;
+                }) => ({
+                  id: item.id,
+                  nome: item.nome,
+                  ultimaCompra: item.ultimaCompra,
+                  imagemBaixa: <img src={ImgBaixa} alt="" />,
+                  quantidade: item.quantidade,
+                })
+              )
+            }
+          />
 
-
-          }))
-          
-          } />
-          
           <TabelaProducts
             nav={<HeardProdutoEsgotado />}
             id="ID"
-            dados={esgotado && esgotado.map((item: { id: number; nome: string; ultimaCompra: number; quantidade: number; }) => ({
-              id: item.id,
-              nome: item.nome,
-              ultimaCompra: item.ultimaCompra,
-              imagemBaixa:(
-                <img src={ImgBaixa} alt="" />
-              ),
-              quantidade: item.quantidade,
-              
-            }))
-          }
+            dados={
+              esgotado &&
+              esgotado.map(
+                (item: {
+                  id: number;
+                  nome: string;
+                  ultimaCompra: number;
+                  quantidade: number;
+                }) => ({
+                  id: item.id,
+                  nome: item.nome,
+                  ultimaCompra: item.ultimaCompra,
+                  imagemBaixa: <img src={ImgBaixa} alt="" />,
+                  quantidade: item.quantidade,
+                })
+              )
+            }
           />
-        
         </S.DivTable>
       </Layout>
     </>

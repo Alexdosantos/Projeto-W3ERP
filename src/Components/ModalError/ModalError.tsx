@@ -6,15 +6,14 @@ type ModalErrorProps = {
 };
 
 export const ModalError = ({ error }: ModalErrorProps) => {
-    const handleReload = () => {
-        window.location.reload()
-    }
+  const handleReload = () => {
+    window.location.reload();
+  };
   return (
     <>
       <S.Img src={ImgUsuario} alt="" />
       <S.TextH1>{error}</S.TextH1>
       <S.BtnClose onClick={handleReload}>Fechar</S.BtnClose>
-      
     </>
   );
 };

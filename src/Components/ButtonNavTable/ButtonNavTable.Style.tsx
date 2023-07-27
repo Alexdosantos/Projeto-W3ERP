@@ -21,8 +21,11 @@ export const BtnNavTable = styled.button<ButtonProps>`
   letter-spacing: 0.2px;
 
   background-color: ${(props) =>
-    props.$active ? (props.$buttontype === "EM_ALTA" ? "#00ff00" : "#ff0000") : "#ffffff"};
+    props.$active
+      ? props.$buttontype === "EM_ALTA"
+        ? "#00ff00"
+        : "#ff0000"
+      : "#ffffff"};
 
-    color: ${(props) => (props.$active ? "#ffffff" : "#000000")};
-
-`
+  color: ${(props) => (props.$active ? "#ffffff" : "#000000")};
+`;

@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -9,7 +8,6 @@ export const Container = styled.div`
   margin: auto;
   margin-top: 100px;
   margin-right: 100px;
-
 `;
 
 export const TitleUser = styled.h4`

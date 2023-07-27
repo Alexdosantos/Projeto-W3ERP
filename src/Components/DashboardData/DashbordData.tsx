@@ -6,18 +6,24 @@ import LowCard from "../DashbordCards/LowCard/LowCard";
 import { useQuery } from "react-query";
 import { GetUser } from "../../Service/GetApi/GetUser";
 
-
-
 export const DashbordData = () => {
-  const {data:resumo } = useQuery('resumo' , GetUser.resumo)
-  const graficsProdutoAlta= [{ name: 'Produto Alta', value: resumo?.percentualTotalProdutosAlta}];
-  const graficsProdutoBaixa = [{ name: 'Produto Baixa', value:resumo?.percentualTotalProdutosBaixa }];
-  const graficsPClientAlta = [{ name: 'Cliente Alta', value: resumo?.percentualTotalClientesAlta }];
-  const graficsClienteBaixa = [{ name: 'Cliente Baixa', value: resumo?.percentualTotalClientesBaixa }];
+  const { data: resumo } = useQuery("resumo", GetUser.resumo);
+  const graficsProdutoAlta = [
+    { name: "Produto Alta", value: resumo?.percentualTotalProdutosAlta },
+  ];
+  const graficsProdutoBaixa = [
+    { name: "Produto Baixa", value: resumo?.percentualTotalProdutosBaixa },
+  ];
+  const graficsPClientAlta = [
+    { name: "Cliente Alta", value: resumo?.percentualTotalClientesAlta },
+  ];
+  const graficsClienteBaixa = [
+    { name: "Cliente Baixa", value: resumo?.percentualTotalClientesBaixa },
+  ];
 
   return (
     <>
-      <S.Container id='dashInformation'>
+      <S.Container id="dashInformation">
         <S.Container1>
           <div>
             <S.TextH4>Dashboard</S.TextH4>
@@ -42,21 +48,38 @@ export const DashbordData = () => {
         </S.Container1>
         <S.DivCardsInformation>
           <S.DivCards id="products-High">
-          <HighCard  data={graficsProdutoAlta} title="Produtos" total={resumo?.quantidadeProdutosAlta} porcentagem={resumo?.percentualVariacaoProdutosAlta}  />
-          </S.DivCards>  
+            <HighCard
+              data={graficsProdutoAlta}
+              title="Produtos"
+              total={resumo?.quantidadeProdutosAlta}
+              porcentagem={resumo?.percentualVariacaoProdutosAlta}
+            />
+          </S.DivCards>
           <S.DivCards id="products-Low">
-          <LowCard data={graficsProdutoBaixa} title="Produtos" total={resumo?.quantidadeProdutosBaixa} porcentagem={resumo?.percentualVariacaoProdutosBaixa} />
+            <LowCard
+              data={graficsProdutoBaixa}
+              title="Produtos"
+              total={resumo?.quantidadeProdutosBaixa}
+              porcentagem={resumo?.percentualVariacaoProdutosBaixa}
+            />
           </S.DivCards>
           <S.DivCards id="clients-High">
-          <HighCard data={graficsPClientAlta} title="Clientes" total={resumo?.quantidadeClientesAlta} porcentagem={resumo?.percentualVariacaoClientesAlta} />
+            <HighCard
+              data={graficsPClientAlta}
+              title="Clientes"
+              total={resumo?.quantidadeClientesAlta}
+              porcentagem={resumo?.percentualVariacaoClientesAlta}
+            />
           </S.DivCards>
           <S.DivCards id="clients-Low">
-          <LowCard data={graficsClienteBaixa} title="Clientes" total={resumo?.quantidadeClientesBaixa} porcentagem={resumo?.percentualVariacaoClientesBaixa}  />
+            <LowCard
+              data={graficsClienteBaixa}
+              title="Clientes"
+              total={resumo?.quantidadeClientesBaixa}
+              porcentagem={resumo?.percentualVariacaoClientesBaixa}
+            />
           </S.DivCards>
-          
         </S.DivCardsInformation>
-
-        
       </S.Container>
     </>
   );

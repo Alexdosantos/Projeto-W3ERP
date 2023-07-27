@@ -12,7 +12,7 @@ export const AuthenticLogin = ({ children }: TokeObrigatorioProps) => {
   const [authentication, setAuthentication] = useState(false);
 
   useEffect(() => {
-    const auttoken = localStorage.getItem('AUTH_TOKEN');
+    const auttoken = localStorage.getItem("AUTH_TOKEN");
     if (auttoken) {
       setAuthentication(true);
     }
@@ -27,4 +27,3 @@ export const AuthenticLogin = ({ children }: TokeObrigatorioProps) => {
   }
   return children;
 };
-

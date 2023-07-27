@@ -10,9 +10,9 @@ export const Sidebar = () => {
   return (
     <S.CardBoxGeneral>
       <Link to={"/Dashboard"}>
-      <S.Logo src={Logo} alt="" />
+        <S.Logo src={Logo} alt="" />
       </Link>
-  
+
       <S.DivGeneralIcons>
         <S.StyledLink to="/Dashboard">
           <S.BtnDashbord id="dashboard">
@@ -22,7 +22,7 @@ export const Sidebar = () => {
         </S.StyledLink>
 
         <S.StyledLink to={"/Predicoes"}>
-          <S.BtnPredicoes  id="predicoes">
+          <S.BtnPredicoes id="predicoes">
             <img src={ChartsLine} alt="" />
             Predições
           </S.BtnPredicoes>

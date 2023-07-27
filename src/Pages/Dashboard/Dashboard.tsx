@@ -87,9 +87,7 @@ const Dashboard = () => {
               )
             }
           />
-<div>
-  
-</div>
+          <div></div>
           <TabelaProducts
             nav={
               <NavTable

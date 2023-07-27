@@ -1,4 +1,4 @@
-import { api } from "../../Hooks/UseApi";
+import { api } from "../../Hooks/useApi";
 
 type TokeResponse = {
   token: string;
@@ -9,10 +9,6 @@ export const UseApi = () => ({
       email,
       senha,
     });
-    return response.data;
-  },
-  validateToken: async (token: string): Promise<TokeResponse> => {
-    const response = await api.post("/central/autenticacao/login", { token });
     return response.data;
   },
 });

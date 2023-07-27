@@ -8,7 +8,6 @@ type ModalProps = {
   checkedTodos: boolean;
   checkedAlta: boolean;
   checkedBaixa: boolean;
- 
 };
 
 export const SmallModalProducts = ({

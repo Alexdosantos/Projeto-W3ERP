@@ -1,5 +1,5 @@
 import { UserLogin } from "../UserLogin/UserLogin";
-import * as S from './Header.Style'
+import * as S from "./Header.Style";
 
 const Header = () => {
   return (

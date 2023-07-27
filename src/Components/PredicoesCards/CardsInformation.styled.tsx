@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
   width: 22%;
   height: 42%;
   margin: 2% 0 0 0;
   flex-shrink: 0;
   border-radius: 24px;
   background: var(--branco, #fff);
-  /* Sombra 3 */
+
   box-shadow: 0px 0px 25px 0px rgba(163, 163, 163, 0.2);
 `;
 
@@ -37,7 +36,7 @@ export const TitleUser = styled.h4`
 `;
 export const TitleStatus = styled.p`
   color: #00c247;
-  /* 14px Regular */
+
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
@@ -46,12 +45,9 @@ export const TitleStatus = styled.p`
   letter-spacing: 0.2px;
 `;
 export const DivInformation = styled.div`
-  
   margin: 5% 5% 0 5%;
 `;
 
-
 export const Imgright = styled.img`
   margin: 100% 0 0 0;
-
-`
+`;
