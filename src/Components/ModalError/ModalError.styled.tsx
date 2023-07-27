@@ -6,9 +6,9 @@ export const Img = styled.img`
 export const TextH1 = styled.h1`
   font-family: Sora;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 28px;
-  color: #424242;
+  color: #fd0000;
 `;
 
 export const BtnClose = styled.button`
