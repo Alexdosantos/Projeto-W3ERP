@@ -67,7 +67,7 @@ const Login = () => {
           <S.CardBoxForm>
             <div>
               <S.TextH3>Seja bem vindo!</S.TextH3>
-              <S.TitleH1>Realise seu Login</S.TitleH1>
+              <S.TitleH1>Realize seu Login</S.TitleH1>
             </div>
             <S.DivInputsLogin>
               <S.StyledTextField
