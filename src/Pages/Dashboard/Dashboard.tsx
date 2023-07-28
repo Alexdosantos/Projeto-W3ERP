@@ -3,7 +3,7 @@ import { DashbordData } from "../../Components/DashboardData/DashbordData";
 import { Layout } from "../../Components/Layout/Layout";
 import * as S from "./Dashboard.Style";
 import TabelaProducts from "../../Components/TableDasboard/TableProducts";
-import { NavTable } from "../../Components/NavTable/NavTable";
+import { ToggerTable } from "../../Components/NavTable/ToggerTable";
 import ImgProducts from "../../assets/Icons/IconBlue.png";
 import ImgClients from "../../assets/Icons/IconClients.png";
 import ImgNext from "../../assets/Icons/right.svg";
@@ -20,16 +20,16 @@ type DashProps = {
 };
 
 const Dashboard = () => {
-  const [exibirProdutosAlta, setExibirProdutosAlta] = useState(false);
+  const [exibirProdutosAlta, setExibirProdutosAlta] = useState(true);
   const [exibirProdutosBaixa, setExibirProdutosBaixa] = useState(false);
-  const [exibirClientesAlta, setExibirClientesAlta] = useState(false);
+  const [exibirClientesAlta, setExibirClientesAlta] = useState(true);
   const [exibirClientesBaixa, setExibirClientesBaixa] = useState(false);
 
   const { data: produtos } = useQuery("produtos", GetUser.produtos);
   const { data: clientes } = useQuery("clients", GetUser.cliente);
 
   const produtosData = exibirProdutosAlta
-    ? produtos.filter(
+    ? produtos && produtos.filter(
         ({ classificacao }: DashProps) => classificacao === "EM_ALTA"
       )
     : exibirProdutosBaixa
@@ -39,7 +39,7 @@ const Dashboard = () => {
     : produtos;
 
   const clientesData = exibirClientesAlta
-    ? clientes.filter(
+    ? clientes && clientes.filter(
         ({ classificacao }: DashProps) => classificacao === "EM_ALTA"
       )
     : exibirClientesBaixa
@@ -57,7 +57,7 @@ const Dashboard = () => {
         <S.DivTable>
           <TabelaProducts
             nav={
-              <NavTable
+              <ToggerTable
                 img={ImgProducts}
                 title="Produtos"
                 onClickAlta={() => {
@@ -90,7 +90,7 @@ const Dashboard = () => {
           <div></div>
           <TabelaProducts
             nav={
-              <NavTable
+              <ToggerTable
                 img={ImgClients}
                 title="Clientes"
                 onClickAlta={() => {

@@ -38,7 +38,7 @@ export const Sidebar = () => {
       <S.DivSupport id="contact">
         <S.ImgSupport src={Saly} alt="" />
         <S.TextInformation>
-          Precinsando de ajuda ou suporte em algo
+          Precisando de ajuda ou suporte em algo
         </S.TextInformation>
         <S.BtnContact>Fale conosco</S.BtnContact>
       </S.DivSupport>

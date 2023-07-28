@@ -1,6 +1,6 @@
 import { ButtonNavTable } from "../ButtonNavTable/ButtonNavTable";
 import { useState } from "react";
-import * as S from "./NavTable.Style";
+import * as S from "./ToggerTable.Style";
 type NavTablePropos = {
   img: string;
   title: string;
@@ -8,13 +8,13 @@ type NavTablePropos = {
   onClickBaixa: () => void;
 };
 
-export const NavTable = ({
+export const ToggerTable = ({
   img,
   title,
   onClickAlta,
   onClickBaixa,
 }: NavTablePropos) => {
-  const [isAltaActive, setIsAltaActive] = useState(false);
+  const [isAltaActive, setIsAltaActive] = useState(true);
   const [isBaixaActive, setIsBaixaActive] = useState(false);
 
   const handleAltaClick = () => {
