@@ -1,4 +1,3 @@
-
 import { api } from "../../Hooks/useApi";
 
 export const GetUser = {
