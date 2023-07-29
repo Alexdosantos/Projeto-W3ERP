@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
 `;
 
-export const Tr = styled.tr`
+export const DivTR = styled.tr`
   display: flex;
 `;
 
@@ -32,6 +32,8 @@ export const TitleProdutcs = styled.th`
 `;
 
 export const Td = styled.td`
+  margin: 0;
+
   color: #424242;
 
   font-family: Poppins;

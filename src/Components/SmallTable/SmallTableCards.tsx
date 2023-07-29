@@ -4,7 +4,7 @@ import * as S from "./SmallTableCards.Style";
 type MiniTableProps = {
   dados: Array<TableData>;
 };
-
+const MAX_NOME_PRODUTCTS = 15
 const MiniTableCards = ({ dados }: MiniTableProps) => {
   return (
     <S.Container>
@@ -19,7 +19,10 @@ const MiniTableCards = ({ dados }: MiniTableProps) => {
           {dados &&
             dados.map((item) => (
               <tr key={item.id}>
-                <S.Td>{item.nome}</S.Td>
+                <S.Td>
+                  {item.nome.length <= MAX_NOME_PRODUTCTS ? item.nome :`${item.nome.slice(0, MAX_NOME_PRODUTCTS)}...`}
+                  
+                  </S.Td>
 
                 <S.Td1>
                   <strong>{item.proximaCompra}</strong>

@@ -29,7 +29,8 @@ const Dashboard = () => {
   const { data: clientes } = useQuery("clients", GetUser.cliente);
 
   const produtosData = exibirProdutosAlta
-    ? produtos && produtos.filter(
+    ? produtos &&
+      produtos.filter(
         ({ classificacao }: DashProps) => classificacao === "EM_ALTA"
       )
     : exibirProdutosBaixa
@@ -39,7 +40,8 @@ const Dashboard = () => {
     : produtos;
 
   const clientesData = exibirClientesAlta
-    ? clientes && clientes.filter(
+    ? clientes &&
+      clientes.filter(
         ({ classificacao }: DashProps) => classificacao === "EM_ALTA"
       )
     : exibirClientesBaixa

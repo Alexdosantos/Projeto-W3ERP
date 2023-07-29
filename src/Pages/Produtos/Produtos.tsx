@@ -8,6 +8,7 @@ import Filter from "../../assets/Icons/Filter.png";
 import TabelaProducts from "../../Components/TableDasboard/TableProducts";
 import { useEffect } from "react";
 import { SmallModalProducts } from "../../Components/SmallModalProducts/SmallModalProducts";
+import { Pagination } from "@mui/material";
 
 const Produtos = () => {
   const [page, setPage] = React.useState<number>(1);
@@ -29,12 +30,25 @@ const Produtos = () => {
 
   const List = data?.content;
 
+  const applyFilter = React.useCallback(() => {
+    if (classificacao === "EM_ALTA" || classificacao === "EM_BAIXA") {
+      const filteredList = data?.content.filter(
+        (item: { classificacao: string }) =>
+          item.classificacao === classificacao
+      );
+      setFilterProducts(filteredList || []);
+    } else {
+      setFilterProducts(data?.content || []);
+    }
+  }, [classificacao, data]);
+
   useEffect(() => {
     GetUser.produtosList(searchTerm, page, size);
     if (data) {
       setTotal(data.totalPages);
+      applyFilter();
     }
-  }, [searchTerm, page, data]);
+  }, [searchTerm, page, data, applyFilter]);
 
   const handleSearch = (event: {
     key: string;
@@ -44,17 +58,7 @@ const Produtos = () => {
       setSearchTerm(event.target.value);
     }
   };
-  const applyFilter = () => {
-    if (classificacao === "EM_ALTA" || classificacao === "EM_BAIXA") {
-      const filteredList = List.filter(
-        (item: { classificacao: string }) =>
-          item.classificacao === classificacao
-      );
-      setFilterProducts(filteredList);
-    } else {
-      setFilterProducts(List);
-    }
-  };
+
   const handleButtonApply = () => {
     applyFilter();
     setOpenModal(false);
@@ -118,36 +122,15 @@ const Produtos = () => {
 
         <S.DivPages>
           <S.TextPages>
-            <div>
-              {page} de {total} itens
-            </div>
+            {page} de {total} itens
           </S.TextPages>
           <S.DivButton>
-            <S.BtnAngleDoubleRight
-              onClick={() => setPage((old) => Math.max(old - 10, 10))}
-              disabled={page === 1}
-            ></S.BtnAngleDoubleRight>
-
-            {page > 1 && (
-              <S.BtnPrev onClick={() => setPage((old) => Math.max(old - 1, 1))}>
-                Anterior
-              </S.BtnPrev>
-            )}
-
-            <S.TextNumber>{page}</S.TextNumber>
-
-            {page < total && (
-              <S.BtnNext
-                onClick={() => setPage((old) => Math.min(old + 1, total))}
-              >
-                Próxima
-              </S.BtnNext>
-            )}
-
-            <S.BtnAngleDoubleRight
-              onClick={() => setPage((old) => Math.max(old + 10))}
-              disabled={List && List.length < size}
-            ></S.BtnAngleDoubleRight>
+            <Pagination
+              page={page}
+              count={total}
+              shape="rounded"
+              onChange={(_, newPage) => setPage(newPage)}
+            />
           </S.DivButton>
         </S.DivPages>
       </Layout>

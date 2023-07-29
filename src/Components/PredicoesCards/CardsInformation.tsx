@@ -16,6 +16,7 @@ type CardsInformationProps = {
   id: number;
 };
 
+const MAX_NAME_COMPANY = 15;
 export const CardsInformation = ({
   dados,
   company,
@@ -29,7 +30,11 @@ export const CardsInformation = ({
             <S.ImgUser src={ImgUser} alt="" />
           </div>
           <div>
-            <S.TitleUser>{company}</S.TitleUser>
+            <S.TitleUser>
+              {company.length <= MAX_NAME_COMPANY
+                ? company
+                : `${company.slice(0, MAX_NAME_COMPANY)}...`}
+            </S.TitleUser>
             <S.TitleStatus>. Status vai aqui</S.TitleStatus>
           </div>
         </S.DivUser>
