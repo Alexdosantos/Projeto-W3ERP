@@ -122,7 +122,7 @@ export const ThProdutos = styled.th`
   padding-right: 39%;
 `;
 export const ThCliente = styled.th`
-  padding-right: 43%;
+  padding-right: 23%;
 `;
 export const ThStatus = styled.th`
   padding-left: -20%;
