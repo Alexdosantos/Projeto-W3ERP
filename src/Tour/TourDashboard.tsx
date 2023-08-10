@@ -55,7 +55,7 @@ const steps: StepsProps[] = [
   {
     selector: "#contact",
     content:
-      "Caso preciso entrar em contato conosco , basta aperta no botão Fale Conosco ",
+      "Caso precise entrar em contato conosco , basta aperta no botão Fale Conosco ",
   },
   {
     selector: "#table-Information",
